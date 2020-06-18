@@ -13,10 +13,10 @@ What:
   - Modifier onlyOwner for DIY. Modifiers are commonly used for acces control.
 
 */
-pragma solidity ^0.6.10;
+pragma solidity ^0.6.0;
 
-contract Faucet {
-    address payable owner;
+contract Faucet4 {
+    address payable private owner;
 
     constructor() public {
         owner = msg.sender;
@@ -29,9 +29,9 @@ contract Faucet {
         _;
     }
 
-    function withdraw(uint256 withdraw_amount) public {
-        require(withdraw_amount <= 0.1 ether);
-        msg.sender.transfer(withdraw_amount);
+    function withdraw(uint256 withdrawAmount) public {
+        require(withdrawAmount <= 0.1 ether);
+        msg.sender.transfer(withdrawAmount);
     }
 
     function destroy() public onlyOwner {
