@@ -9,7 +9,7 @@ What:
   - Destroy function must be called by the contract creator (for obvious
   reasons), refunds the owner address with any remaining balance, and the
   storage and code is removed from the state.
-    - Do not use "tx.origin"
+    - Do not use "tx.origin".
   - Modifier onlyOwner for DIY. Modifiers are commonly used for acces control.
 
 */

@@ -33,12 +33,4 @@ contract Mortal5 is Owned5 {
     function destroy() public onlyOwner {
         selfdestruct(owner);
     }
-    // /**
-    //  * @dev In case `owner` was not payable, call `payable(owner)`.
-    //  * The keyword `virtual` is because Token contract inherits from this
-    //  * contract and overrides this function.
-    //  */
-    // function destroy() public virtual onlyOwner {
-    //     selfdestruct(owner);
-    // }
 }
