@@ -2465,28 +2465,14 @@
   },
   "networks": {
     "5777": {
-      "events": {
-        "0xfaa2aa6edc9cf8253cab4e19d1357b2033a13cae167fe72b884d8aad2efdc318": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "_sender",
-              "type": "address"
-            }
-          ],
-          "name": "LogWithdrawFunds",
-          "type": "event"
-        }
-      },
+      "events": {},
       "links": {},
-      "address": "0x8638F1100937b7ebdFB1CD8fcb4efc963634EA23",
-      "transactionHash": "0x4cb5ba8d0ce466b085ccbfed3c7cd736c9929b3e311a7b885f03599d4473f571"
+      "address": "0x28f65a0141423FE0020FdED6150b39F6858b4ff8",
+      "transactionHash": "0xc86825539097c0c69896febc2cca6be20bfab0a755cd35dce8719fec6027c596"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-07-06T17:12:55.923Z",
+  "updatedAt": "2020-07-07T17:46:16.346Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Victor Navascues.",

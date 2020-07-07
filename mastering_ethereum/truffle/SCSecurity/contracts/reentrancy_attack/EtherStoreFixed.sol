@@ -89,7 +89,7 @@ contract EtherStoreFixed {
         (bool success, ) = msg.sender.call{value: _weiToWithdraw}("");
 
         require(success, "Failed transaction.");
-        emit LogDepositReceived(msg.sender, _weiToWithdraw);
+        emit LogWithdrawalProcessed(msg.sender, _weiToWithdraw);
     }
 
     // NB: not applicable
