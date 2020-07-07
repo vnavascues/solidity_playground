@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "solidity_playground"
+version = "0.1.0"
+description = "Learning Solidity, Ethereum smart contracts, and dApps as a playground."
+authors = ["Victor Navascues"]
+
+[tool.poetry.dependencies]
+mythx-cli = "^0.6"
+python = "^3.8"
+slither-analyzer = "^0.6"

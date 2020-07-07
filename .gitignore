@@ -1,7 +1,13 @@
+# Environment variables
+.env
+
 # Logs
 logs/*
 !logs/.gitkeep
 .log
+
+# Mythx
+bin/
 
 # NPM
 node_modules
