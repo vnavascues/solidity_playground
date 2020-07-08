@@ -1,12 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+import "@openzeppelin/contracts/access/Ownable.sol";
+
 /**
  * @title Mastering Ethereum Chapter 9, EtherStore fixed contract.
  * @author Victor Navascues.
  * @notice EtherStoreFixed contract prevents reentrancy attacks.
  * @dev Multiple security issues in `withdrawFunds()`  have been addressed.
  * This contract differs from the book implementation in:
+ *  - It inherits from oppenzeppelin access `Ownable` contract, implementing
+ *  an access modifier in the `collectEther()` function. Just for learning
+ *  purposes.
+ *
  *  - It implements the mutex logic follwing the Solidity official
  *  documentation example (via modifier, below):
  *    - https://solidity.readthedocs.io/en/v0.6.0/contracts.html?highlight=constructor#function-modifiers
@@ -28,8 +34,11 @@ pragma solidity ^0.6.0;
  *    - Lock pragmas to specific compiler version. NA.
  *
  *  - Added the optional message in `require()`.
+ *
+ *  NB: Ideally it could inherit from openzeppelin token `TokenTimelock`
+ *  contract, but it this beyond the exercise of fixing the reentrancy attack.
  */
-contract EtherStoreFixed {
+contract EtherStoreFixed is Ownable {
     bool private locked = false;
     uint256 public withdrawalLimit = 1 ether;
     mapping(address => uint256) public lastWithdrawTime;

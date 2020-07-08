@@ -1,16 +1,19 @@
 # Environment variables
 .env
 
+# IDEs
+.vscode
+
 # Logs
 logs/*
 !logs/.gitkeep
 .log
 
 # Mythx
-bin/
+bin
 
 # NPM
 node_modules
 
-# IDEs
-.vscode
+# Truffle
+build

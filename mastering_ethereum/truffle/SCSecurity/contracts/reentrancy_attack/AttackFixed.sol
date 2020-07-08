@@ -1,19 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+import "@openzeppelin/contracts/access/Ownable.sol";
 import {EtherStoreFixed as UntrustedEtherStore} from "./EtherStoreFixed.sol";
-import {Owned as TrustedOwned} from "./Owned.sol";
 
 /**
  * @title Mastering Ethereum Chapter 9, Attack contract.
  * @author Victor Navascues.
- * @notice Attempts to explout EtherStoreFixed contract.
- * @dev This contract has been modified regarding the original one, by adding
- * and access modified in the `collectEther()` function (inheriting `Owned`).
- * This contract differs from the book implementation in:
- *  - It implements the mutex logic follwing the Solidity official
- *  documentation example (via modifier, below):
- *    - https://solidity.readthedocs.io/en/v0.6.0/contracts.html?highlight=constructor#function-modifiers
+ * @notice Attempts to exploit EtherStoreFixed contract.
+ * @dev This contract differs from the book implementation in:
+ *  - It inherits from oppenzeppelin access `Ownable` contract, implementing
+ *  an access modifier in the `collectEther()` function. Just for learning
+ *  purposes.
  *
  *  - It implements some Consensys' best practices (link below):
  *    - https://consensys.github.io/smart-contract-best-practices/recommendations
@@ -33,7 +31,7 @@ import {Owned as TrustedOwned} from "./Owned.sol";
  *
  *  - Added the optional message in `require()`.
  */
-contract AttackFixed is TrustedOwned {
+contract AttackFixed is Ownable {
     UntrustedEtherStore public untrustedEtherStore;
 
     event LogFallbackCall(address _sender, uint256 _value);

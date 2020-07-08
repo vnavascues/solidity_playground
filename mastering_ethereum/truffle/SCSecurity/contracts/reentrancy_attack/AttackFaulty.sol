@@ -2,7 +2,6 @@
 pragma solidity ^0.6.0;
 
 import {EtherStoreFaulty} from "./EtherStoreFaulty.sol";
-import {Owned} from "./Owned.sol";
 
 /**
  * @title Mastering Ethereum Chapter 9, Attack contract.
