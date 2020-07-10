@@ -42,8 +42,8 @@ contract AttackFixed is Ownable {
 
     receive() external payable {}
 
-    function attackUntrustedEtherStore() external payable {
-        require(msg.value >= 1 ether);
+    function attackUntrustedEtherStore() public payable onlyOwner {
+        require(msg.value >= 1 ether, "Requires 1 ether.");
         untrustedEtherStore.depositFunds{value: 1 ether}();
         untrustedEtherStore.withdrawFunds(1 ether);
     }

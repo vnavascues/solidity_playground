@@ -2467,12 +2467,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xD01B37F3aFac084db7E1648BC3263Dc430496c56",
-      "transactionHash": "0x96038aa53ef02948d2bc47d5354eac55202b31fc9a1238fd8d44586ff71587a7"
+      "address": "0x8fDff122b446660B85F757e7aDc0D63feb41dcA8",
+      "transactionHash": "0x7f84182729abb05e48878d4af19f2411b9db9d3d18324802d02490f3b682a099"
     }
   },
   "schemaVersion": "3.2.1",
-  "updatedAt": "2020-07-08T15:15:12.299Z",
+  "updatedAt": "2020-07-10T18:11:12.226Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Victor Navascues.",

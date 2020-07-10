@@ -2,7 +2,6 @@
   "name": "solidity_playground",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "@openzeppelin/contracts": "^3.1.0",
     "prettier": "^2.0.5",

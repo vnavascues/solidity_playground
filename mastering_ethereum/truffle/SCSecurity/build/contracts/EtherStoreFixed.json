@@ -4134,12 +4134,12 @@
         }
       },
       "links": {},
-      "address": "0xe00372F16E5E7833d22Ec67fa001343B37B8011a",
-      "transactionHash": "0xf1619c103e401f2d068683680af108cd9024cab04d6d91e2902a599a0d31a58b"
+      "address": "0x29eB2C9E27f8a18092A2D3Ad0Cccb820B20a4281",
+      "transactionHash": "0x0d471911fc2e78abaca6b77911b18effe70ee8449bb6f1a9e3b05831676bdd2a"
     }
   },
   "schemaVersion": "3.2.1",
-  "updatedAt": "2020-07-08T15:15:12.660Z",
+  "updatedAt": "2020-07-10T18:11:12.504Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Victor Navascues.",
