@@ -5,15 +5,17 @@
 .vscode
 
 # Logs
-logs/*
-!logs/.gitkeep
-.log
+logs
+*.log
 
 # Mythx
-bin
+bin/
 
 # NPM
 node_modules
 
+# Solidity coverage
+coverage/
+
 # Truffle
-build
+build/
