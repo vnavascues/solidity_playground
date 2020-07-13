@@ -1,0 +1,25 @@
+{
+  "name": "tokens",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Victor Navascues",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --forceExit --detectOpenHandles",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/test-environment": "^0.1.4",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "jest-runner-groups": "^2.0.1",
+    "jest-runner-prettier": "^0.3.6",
+    "jest-transform-stub": "^2.0.0",
+    "jest-watch-typeahead": "^0.6.0",
+    "power-assert": "^1.6.1",
+    "prettier": "^2.0.5"
+  }
+}
