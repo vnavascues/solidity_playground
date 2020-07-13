@@ -52,8 +52,7 @@
     },
     {
       "stateMutability": "payable",
-      "type": "fallback",
-      "payable": true
+      "type": "fallback"
     },
     {
       "inputs": [],
@@ -66,8 +65,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -100,21 +98,18 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "stateMutability": "payable",
-      "type": "receive",
-      "payable": true
+      "type": "receive"
     },
     {
       "inputs": [],
       "name": "attackUntrustedEtherStore",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -3032,56 +3027,9 @@
     "name": "solc",
     "version": "0.6.10+commit.00c0fcaf.Emscripten.clang"
   },
-  "networks": {
-    "5777": {
-      "events": {
-        "0xeeda8ea091404366d8f352cf63bd9e6eca7a4aec8475bb8915d44464b90a14cd": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "_sender",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_value",
-              "type": "uint256"
-            }
-          ],
-          "name": "LogFallbackCall",
-          "type": "event"
-        },
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0x0d0a407ed2D2D1660602B46C5d968B08e919bBb4",
-      "transactionHash": "0x71202383e4bfe04c175cc44fb29af8c22f69cc8325440665f558e25a8af7c7ab"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.2.1",
-  "updatedAt": "2020-07-10T18:11:12.506Z",
-  "networkType": "ethereum",
+  "updatedAt": "2020-07-13T14:57:06.618Z",
   "devdoc": {
     "author": "Victor Navascues.",
     "details": "This contract differs from the book implementation in:  - It inherits from oppenzeppelin access `Ownable` contract, implementing  an access modifier in the `collectEther()` function. Just for learning  purposes.  - It implements some Consensys' best practices (link below):    - https://consensys.github.io/smart-contract-best-practices/recommendations    - Contract layout (type declarations, state variables, events, and    functions).    - Mark untrusted contracts. NA.    - Function arguments with leading underscore.    - Log names starting with `Log`.    - Don't use `transfer()` or `send()`.    - Handle errors in external calls.    - Use modifiers only for checks.    - Improved `fallback()` (e.g. simple, log an event, and check data    length). NA.    - Use events to monitor contract activity.    - Lock pragmas to specific compiler version. NA.  - Added the optional message in `require()`.",
