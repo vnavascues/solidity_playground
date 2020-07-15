@@ -14,7 +14,7 @@
  * @group contracts/attackfixed
  * @group scsecurity/contracts/attackfixed
  */
-const { accounts, contract, web3 } = require("@openzeppelin/test-environment");
+const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
 const {
   BN,
@@ -26,7 +26,7 @@ const {
   send,
   time,
 } = require("@openzeppelin/test-helpers");
-const { transactionCost } = require("./helpers/transactionCost.js");
+const {transactionCost} = require("./helpers/transactionCost.js");
 
 const AttackFixed = contract.fromArtifact("AttackFixed");
 const EtherStoreFixed = contract.fromArtifact("EtherStoreFixed");
@@ -37,7 +37,7 @@ describe("AttackFixed", () => {
   const [attacker, etherStoreFixedOwner, victim1, account1] = accounts;
 
   beforeEach(async () => {
-    etherStoreFixed = await EtherStoreFixed.new({ from: etherStoreFixedOwner });
+    etherStoreFixed = await EtherStoreFixed.new({from: etherStoreFixedOwner});
     attackFixed = await AttackFixed.new(etherStoreFixed.address, {
       from: attacker,
     });
@@ -74,7 +74,7 @@ describe("AttackFixed", () => {
       test("the transaction is reverted", async () => {
         const message = "Ownable: caller is not the owner.";
         await expectRevert(
-          attackFixed.attackUntrustedEtherStore({ from: account1 }),
+          attackFixed.attackUntrustedEtherStore({from: account1}),
           message
         );
       });
@@ -83,7 +83,7 @@ describe("AttackFixed", () => {
     describe("the sender is the owner", () => {
       describe("the message value is less than 1 ether", () => {
         test("the transaction is reverted", async () => {
-          const message = "Requires 1 ether.";
+          const message = "AttackFixed: Requires 1 ether.";
           await expectRevert(
             attackFixed.attackUntrustedEtherStore({
               from: attacker,
@@ -182,10 +182,7 @@ describe("AttackFixed", () => {
     describe("the sender is not the owner", () => {
       test("the transaction is reverted", async () => {
         const message = "Ownable: caller is not the owner.";
-        await expectRevert(
-          attackFixed.collectEther({ from: account1 }),
-          message
-        );
+        await expectRevert(attackFixed.collectEther({from: account1}), message);
       });
     });
 
@@ -198,7 +195,7 @@ describe("AttackFixed", () => {
 
       test("the sender balance is updated", async () => {
         const tracker = await balance.tracker(attacker);
-        const receipt = await attackFixed.collectEther({ from: attacker });
+        const receipt = await attackFixed.collectEther({from: attacker});
         const tx = await web3.eth.getTransaction(receipt.tx);
         const txCost = transactionCost(tx.gasPrice, receipt.receipt.gasUsed);
         const withdrawDelta = prevAttackFixedBal.sub(txCost);
@@ -207,7 +204,7 @@ describe("AttackFixed", () => {
       });
 
       test("the contract balance is updated", async () => {
-        await attackFixed.collectEther({ from: attacker });
+        await attackFixed.collectEther({from: attacker});
         const curAttackFixedBal = await balance.current(attackFixed.address);
         expect(curAttackFixedBal.toString()).toEqual("0");
       });

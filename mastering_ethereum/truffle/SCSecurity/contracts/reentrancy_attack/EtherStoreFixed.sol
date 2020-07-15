@@ -79,15 +79,15 @@ contract EtherStoreFixed is Ownable {
     function withdrawFunds(uint256 _weiToWithdraw) public noReentrancyMutex {
         require(
             balances[msg.sender] >= _weiToWithdraw,
-            "Insufficient balance."
+            "EtherStoreFixed: Insufficient balance."
         );
         require(
             _weiToWithdraw <= withdrawalLimit,
-            "Withdrawal limit exceeded."
+            "EtherStoreFixed: Withdrawal limit exceeded."
         );
         require(
             now >= lastWithdrawTime[msg.sender] + 1 weeks,
-            "A week has not passed since last withdrawal."
+            "EtherStoreFixed: A week has not passed since last withdrawal."
         );
 
         balances[msg.sender] -= _weiToWithdraw;
@@ -97,7 +97,7 @@ contract EtherStoreFixed is Ownable {
         // msg.sender.transfer(_weiToWithdraw);
         (bool success, ) = msg.sender.call{value: _weiToWithdraw}("");
 
-        require(success, "Failed transaction.");
+        require(success, "EtherStoreFixed: Failed transaction.");
         emit LogWithdrawalProcessed(msg.sender, _weiToWithdraw);
     }
 

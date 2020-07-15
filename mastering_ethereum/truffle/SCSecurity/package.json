@@ -20,6 +20,8 @@
     "jest-transform-stub": "^2.0.0",
     "jest-watch-typeahead": "^0.6.0",
     "power-assert": "^1.6.1",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "prettier-plugin-solidity": "^1.0.0-alpha.54",
+    "solhint": "^3.0.0"
   }
 }

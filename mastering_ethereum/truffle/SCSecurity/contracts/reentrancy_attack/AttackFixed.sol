@@ -43,14 +43,14 @@ contract AttackFixed is Ownable {
     receive() external payable {}
 
     function attackUntrustedEtherStore() public payable onlyOwner {
-        require(msg.value >= 1 ether, "Requires 1 ether.");
+        require(msg.value >= 1 ether, "AttackFixed: Requires 1 ether.");
         untrustedEtherStore.depositFunds{value: 1 ether}();
         untrustedEtherStore.withdrawFunds(1 ether);
     }
 
     function collectEther() public onlyOwner {
         (bool success, ) = msg.sender.call{value: address(this).balance}("");
-        require(success, "Transaction failed.");
+        require(success, "AttackFixed: Transaction failed.");
     }
 
     fallback() external payable {

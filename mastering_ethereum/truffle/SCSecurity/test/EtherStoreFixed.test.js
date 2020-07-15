@@ -14,7 +14,7 @@
  * @group contracts/etherstorefixed
  * @group scsecurity/contracts/etherstorefixed
  */
-const { accounts, contract, web3 } = require("@openzeppelin/test-environment");
+const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
 const {
   BN,
@@ -26,7 +26,7 @@ const {
   send,
   time,
 } = require("@openzeppelin/test-helpers");
-const { transactionCost } = require("./helpers/transactionCost.js");
+const {transactionCost} = require("./helpers/transactionCost.js");
 
 const EtherStoreFixed = contract.fromArtifact("EtherStoreFixed");
 let etherStoreFixed;
@@ -35,7 +35,7 @@ describe("EtherStoreFixed", () => {
   const [owner, account1] = accounts;
 
   beforeEach(async () => {
-    etherStoreFixed = await EtherStoreFixed.new({ from: owner });
+    etherStoreFixed = await EtherStoreFixed.new({from: owner});
   });
 
   describe("deployed", () => {
@@ -89,10 +89,10 @@ describe("EtherStoreFixed", () => {
   describe("withdrawFunds()", () => {
     describe("the sender does not have sufficient balance", () => {
       test("the transaction is reverted", async () => {
-        const message = "Insufficient balance.";
+        const message = "EtherStoreFixed: Insufficient balance.";
         const withdraw = ether("1");
         await expectRevert(
-          etherStoreFixed.withdrawFunds(withdraw, { from: account1 }),
+          etherStoreFixed.withdrawFunds(withdraw, {from: account1}),
           message
         );
       });
@@ -109,10 +109,10 @@ describe("EtherStoreFixed", () => {
 
       describe("the withdrawal limit is exceeded", () => {
         test("the transaction is reverted", async () => {
-          const message = "Withdrawal limit exceeded.";
+          const message = "EtherStoreFixed: Withdrawal limit exceeded.";
           const withdraw = ether("1.5");
           await expectRevert(
-            etherStoreFixed.withdrawFunds(withdraw, { from: account1 }),
+            etherStoreFixed.withdrawFunds(withdraw, {from: account1}),
             message
           );
         });
@@ -121,11 +121,12 @@ describe("EtherStoreFixed", () => {
       describe("the withdrawal limit is not exceeded", () => {
         describe("a week has not passed since last withdrawal", () => {
           test("the transaction is reverted", async () => {
-            const message = "A week has not passed since last withdrawal.";
+            const message =
+              "EtherStoreFixed: A week has not passed since last withdrawal.";
             const withdraw = ether("1");
-            await etherStoreFixed.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFixed.withdrawFunds(withdraw, {from: account1});
             await expectRevert(
-              etherStoreFixed.withdrawFunds(withdraw, { from: account1 }),
+              etherStoreFixed.withdrawFunds(withdraw, {from: account1}),
               message
             );
           });
@@ -137,7 +138,7 @@ describe("EtherStoreFixed", () => {
             const startAt = await time.latest();
             const timeDelta = time.duration.weeks(2);
             const endAt = startAt.add(timeDelta);
-            await etherStoreFixed.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFixed.withdrawFunds(withdraw, {from: account1});
             await time.increaseTo(endAt);
           });
 
@@ -160,7 +161,7 @@ describe("EtherStoreFixed", () => {
           test("the sender balance is updated", async () => {
             const withdraw = ether("1");
             const prevAccount1Bal = await etherStoreFixed.balances(account1);
-            await etherStoreFixed.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFixed.withdrawFunds(withdraw, {from: account1});
             const curAccount1Bal = await etherStoreFixed.balances(account1);
             const expAccount1Bal = prevAccount1Bal.sub(withdraw);
             expect(curAccount1Bal.toString()).toEqual(
@@ -174,7 +175,7 @@ describe("EtherStoreFixed", () => {
             const timeDelta = time.duration.hours(1);
             const endAt = startAt.add(timeDelta);
             await time.increaseTo(endAt);
-            await etherStoreFixed.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFixed.withdrawFunds(withdraw, {from: account1});
             const account1LWTime = await etherStoreFixed.lastWithdrawTime(
               account1
             );

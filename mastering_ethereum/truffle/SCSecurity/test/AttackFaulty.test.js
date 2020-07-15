@@ -14,7 +14,7 @@
  * @group contracts/attackfaulty
  * @group scsecurity/contracts/attackfaulty
  */
-const { accounts, contract, web3 } = require("@openzeppelin/test-environment");
+const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
 const {
   BN,
@@ -26,7 +26,7 @@ const {
   send,
   time,
 } = require("@openzeppelin/test-helpers");
-const { transactionCost } = require("./helpers/transactionCost.js");
+const {transactionCost} = require("./helpers/transactionCost.js");
 
 const AttackFaulty = contract.fromArtifact("AttackFaulty");
 const EtherStoreFaulty = contract.fromArtifact("EtherStoreFaulty");
@@ -60,7 +60,7 @@ describe.only("AttackFaulty", () => {
   describe("attackEtherStoreFaulty()", () => {
     describe("the message value is less than 1 ether", () => {
       test("the transaction is reverted", async () => {
-        const message = "Requires 1 ether.";
+        const message = "AttackFaulty: Requires 1 ether.";
         await expectRevert(
           attackFaulty.attackEtherStoreFaulty({
             from: attacker,
@@ -129,7 +129,7 @@ describe.only("AttackFaulty", () => {
 
     test("the sender balance is updated", async () => {
       const tracker = await balance.tracker(attacker);
-      const receipt = await attackFaulty.collectEther({ from: attacker });
+      const receipt = await attackFaulty.collectEther({from: attacker});
       const tx = await web3.eth.getTransaction(receipt.tx);
       const txCost = transactionCost(tx.gasPrice, receipt.receipt.gasUsed);
       const withdrawDelta = prevAttackFaultyBal.sub(txCost);
@@ -138,7 +138,7 @@ describe.only("AttackFaulty", () => {
     });
 
     test("the contract balance is updated", async () => {
-      await attackFaulty.collectEther({ from: attacker });
+      await attackFaulty.collectEther({from: attacker});
       const curAttackFaultyBal = await balance.current(attackFaulty.address);
       expect(curAttackFaultyBal.toString()).toEqual("0");
     });
