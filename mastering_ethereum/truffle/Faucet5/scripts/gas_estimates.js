@@ -1,4 +1,4 @@
-const Faucet5 = artifacts.require("./Faucet5.sol");
+const Faucet5 = artifacts.require("Faucet5");
 
 Faucet5.web3.eth.getGasPrice(async function (error, result) {
   const gasPrice = Number(result);

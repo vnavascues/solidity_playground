@@ -29,7 +29,7 @@ contract Faucet5 is Mortal5 {
         // NB: This check increases gas consumption slightly.
         require(
             myAddress.balance >= withdrawAmount,
-            "Insufficient balance in faucet for withdrawal request"
+            "Faucet5: Insufficient balance in faucet for withdrawal request."
         );
         msg.sender.transfer(withdrawAmount);
         emit Withdrawal(msg.sender, withdrawAmount);

@@ -1,4 +1,4 @@
-const Faucet5 = artifacts.require("./Faucet5.sol");
+const Faucet5 = artifacts.require("Faucet5");
 
 module.exports = async function (callback) {
   const instance = await Faucet5.deployed();
