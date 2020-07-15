@@ -14,19 +14,19 @@
  * @group contracts/etherstorefaulty
  * @group scsecurity/contracts/etherstorefaulty
  */
-const { accounts, contract, web3 } = require("@openzeppelin/test-environment");
+const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
 const {
-  BN,
+  // BN,
   balance,
-  constants,
+  // constants,
   ether,
-  expectEvent,
+  // expectEvent,
   expectRevert,
   send,
   time,
 } = require("@openzeppelin/test-helpers");
-const { transactionCost } = require("./helpers/transactionCost.js");
+const {transactionCost} = require("./helpers/transactionCost.js");
 
 const EtherStoreFaulty = contract.fromArtifact("EtherStoreFaulty");
 let etherStoreFaulty;
@@ -35,7 +35,7 @@ describe("EtherStoreFaulty", () => {
   const [owner, account1] = accounts;
 
   beforeEach(async () => {
-    etherStoreFaulty = await EtherStoreFaulty.new({ from: owner });
+    etherStoreFaulty = await EtherStoreFaulty.new({from: owner});
   });
 
   describe("deployed", () => {
@@ -75,7 +75,7 @@ describe("EtherStoreFaulty", () => {
       test("the transaction is reverted", async () => {
         const withdraw = ether("1");
         await expectRevert.unspecified(
-          etherStoreFaulty.withdrawFunds(withdraw, { from: account1 })
+          etherStoreFaulty.withdrawFunds(withdraw, {from: account1})
         );
       });
     });
@@ -93,7 +93,7 @@ describe("EtherStoreFaulty", () => {
         test("the transaction is reverted", async () => {
           const withdraw = ether("1.5");
           await expectRevert.unspecified(
-            etherStoreFaulty.withdrawFunds(withdraw, { from: account1 })
+            etherStoreFaulty.withdrawFunds(withdraw, {from: account1})
           );
         });
       });
@@ -102,9 +102,9 @@ describe("EtherStoreFaulty", () => {
         describe("a week has not passed since last withdrawal", () => {
           test("the transaction is reverted", async () => {
             const withdraw = ether("1");
-            await etherStoreFaulty.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFaulty.withdrawFunds(withdraw, {from: account1});
             await expectRevert.unspecified(
-              etherStoreFaulty.withdrawFunds(withdraw, { from: account1 })
+              etherStoreFaulty.withdrawFunds(withdraw, {from: account1})
             );
           });
         });
@@ -115,7 +115,7 @@ describe("EtherStoreFaulty", () => {
             const startAt = await time.latest();
             const timeDelta = time.duration.weeks(2);
             const endAt = startAt.add(timeDelta);
-            await etherStoreFaulty.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFaulty.withdrawFunds(withdraw, {from: account1});
             await time.increaseTo(endAt);
           });
 
@@ -138,7 +138,7 @@ describe("EtherStoreFaulty", () => {
           test("the sender balance is updated", async () => {
             const withdraw = ether("1");
             const prevAccount1Bal = await etherStoreFaulty.balances(account1);
-            await etherStoreFaulty.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFaulty.withdrawFunds(withdraw, {from: account1});
             const curAccount1Bal = await etherStoreFaulty.balances(account1);
             const expAccount1Bal = prevAccount1Bal.sub(withdraw);
             expect(curAccount1Bal.toString()).toEqual(
@@ -152,7 +152,7 @@ describe("EtherStoreFaulty", () => {
             const timeDelta = time.duration.hours(1);
             const endAt = startAt.add(timeDelta);
             await time.increaseTo(endAt);
-            await etherStoreFaulty.withdrawFunds(withdraw, { from: account1 });
+            await etherStoreFaulty.withdrawFunds(withdraw, {from: account1});
             const account1LWTime = await etherStoreFaulty.lastWithdrawTime(
               account1
             );

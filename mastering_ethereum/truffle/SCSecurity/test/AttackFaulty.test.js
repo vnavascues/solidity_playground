@@ -17,14 +17,14 @@
 const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
 const {
-  BN,
+  // BN,
   balance,
-  constants,
+  // constants,
   ether,
-  expectEvent,
+  // expectEvent,
   expectRevert,
   send,
-  time,
+  // time,
 } = require("@openzeppelin/test-helpers");
 const {transactionCost} = require("./helpers/transactionCost.js");
 
@@ -34,7 +34,7 @@ let attackFaulty;
 let etherStoreFaulty;
 
 describe.only("AttackFaulty", () => {
-  const [attacker, etherStoreFaultyOwner, victim1, account1] = accounts;
+  const [attacker, etherStoreFaultyOwner, victim1] = accounts;
 
   beforeEach(async () => {
     etherStoreFaulty = await EtherStoreFaulty.new({
