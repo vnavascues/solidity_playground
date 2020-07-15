@@ -1,6 +1,6 @@
-const CalledLibrary = artifacts.require("./CalledLibrary.sol");
-const Called = artifacts.require("./Called.sol");
-const Caller = artifacts.require("./Caller.sol");
+const CalledLibrary = artifacts.require("CalledLibrary");
+const Called = artifacts.require("Called");
+const Caller = artifacts.require("Caller");
 
 module.exports = async function (callback) {
   async function getAccounts() {
