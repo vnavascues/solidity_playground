@@ -30,6 +30,6 @@ contract METoken is ERC20 {
      */
     constructor() public ERC20(NAME, SYMBOL) {
         _setupDecimals(DECIMALS);
-        _mint(msg.sender, INITIAL_SUPPLY);
+        _mint(_msgSender(), INITIAL_SUPPLY);
     }
 }
