@@ -13,7 +13,7 @@ import "@chainlink/contracts/src/v0.6/interfaces/AggregatorInterface.sol";
  *  - https://docs.chain.link/docs/using-chainlink-reference-contracts
  *
  * Contract addresses
- *  - Ropsten: 0x8fDff122b446660B85F757e7aDc0D63feb41dcA8
+ *  - Ropsten: 0x3f9747eCBF5Db2d039e7861fC2aFC2E67dDd7ecF
  */
 contract PriceConsumer {
     AggregatorInterface internal trustedPriceFeed;

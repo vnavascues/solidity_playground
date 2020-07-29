@@ -58,10 +58,14 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(
           process.env.MNEMONIC_2,
-          process.env.ROPSTEN_HTTPS_ENDPOINT
+          process.env.ROPSTEN_WSS_ENDPOINT
         ),
       network_id: 3,
+      gas: 5500000,
+      gasPrice: 100000000000,
+      timeoutBlocks: 4000,
       skipDryRun: true,
+      websockets: true,
     },
     dev: {
       host: "127.0.0.1",
