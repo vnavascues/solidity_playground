@@ -7,7 +7,7 @@
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
     "solhint": "^3.0.0",
-    "truffle": "^5.1.30"
+    "truffle": "^5.1.35"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
