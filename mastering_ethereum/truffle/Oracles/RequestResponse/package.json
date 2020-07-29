@@ -1,0 +1,29 @@
+{
+  "name": "oracles_request_response",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Victor Navascues",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "lint": "prettier --list-different **/*.sol",
+  "dependencies": {
+    "@chainlink/contracts": "0.0.8",
+    "@truffle/hdwallet-provider": "^1.0.39",
+    "bignumber": "^1.1.0",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "module-alias": "^2.2.2",
+    "prettier": "^2.0.5",
+    "prettier-plugin-solidity": "^1.0.0-alpha.54",
+    "solhint": "^3.0.0"
+  },
+  "devDependencies": {},
+  "_moduleAliases": {
+    "@utils": "utils"
+  }
+}
