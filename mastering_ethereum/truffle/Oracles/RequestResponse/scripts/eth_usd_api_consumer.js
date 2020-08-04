@@ -99,8 +99,9 @@
  * Ropsten LINK faucet:
  *  - https://ropsten.chain.link/
  *
- * Ropsten PriceAPIConsumer contract addresses:
- *  - 0x66e1d52805695DDaf8D7835F45cE196D7827b559
+ * Ropsten EthUsdAPIConsumer contract addresses:
+ *  - (current): 0xf1deffC43dB10A0fe83C1dC8BEdA10fD7Df732a3
+ *  - (previous) 0x66e1d52805695DDaf8D7835F45cE196D7827b559
  *
  * Node details (from Chainlink Market):
  *  - https://market.link/jobs/d1178a2c-d090-4396-9b09-5f278cfaa155
@@ -139,7 +140,7 @@ const {
 LinkTokenInterface.setProvider(provider);
 
 // Truffle
-const PriceAPIConsumer = artifacts.require("PriceAPIConsumer");
+const EthUsdAPIConsumer = artifacts.require("EthUsdAPIConsumer");
 const BN = web3.utils.BN;
 
 // Oracle
@@ -175,14 +176,14 @@ module.exports = async function (callback) {
   const accounts = await getAccounts();
   const owner = accounts[0];
 
-  // Get PriceAPIConsumer instance and events
-  const priceAPIConsumer = await PriceAPIConsumer.deployed().catch((e) =>
+  // Get EthUsdAPIConsumer instance and events
+  const ethUsdAPIConsumer = await EthUsdAPIConsumer.deployed().catch((e) =>
     console.log(e)
   );
-  console.log("PriceAPIConsumer contract address", priceAPIConsumer.address);
+  console.log("EthUsdAPIConsumer contract address", ethUsdAPIConsumer.address);
 
   // Get ChainLink contract instance and address
-  const linkTokenAddress = await priceAPIConsumer.getChainlinkToken({
+  const linkTokenAddress = await ethUsdAPIConsumer.getChainlinkToken({
     from: owner,
   });
   console.log("ChainLink Token (LINK) address", linkTokenAddress);
@@ -202,30 +203,30 @@ module.exports = async function (callback) {
     `LINK owner balance: ${ownerBalance.div(denominator).toString()}`
   );
 
-  // Get PriceAPIConsumer LINK balance
-  const priceAPIConsumerBalance = await linkToken.balanceOf(
-    priceAPIConsumer.address,
+  // Get ethUsdAPIConsumer LINK balance
+  const ethUsdAPIConsumerBalance = await linkToken.balanceOf(
+    ethUsdAPIConsumer.address,
     {from: owner}
   );
 
   console.log(
-    `LINK contract balance: ${priceAPIConsumerBalance
+    `LINK contract balance: ${ethUsdAPIConsumerBalance
       .div(denominator)
       .toString()}`
   );
   console.log("");
 
-  // Fund PriceAPIConsumer contract with LINK if its balance is 0
-  if (priceAPIConsumerBalance.isZero()) {
-    console.log("Funding PriceAPIConsumer with 1 LINK...\n");
-    await linkToken.transfer(priceAPIConsumer.address, oneLINK, {
+  // Fund EthUsdAPIConsumer contract with LINK if its balance is 0
+  if (ethUsdAPIConsumerBalance.isZero()) {
+    console.log("Funding EthUsdAPIConsumer with 1 LINK...\n");
+    await linkToken.transfer(EthUsdAPIConsumer.address, oneLINK, {
       from: owner,
     });
   }
 
   // Request price
   console.log("Requesting price...");
-  const receipt = await priceAPIConsumer.requestPrice(ORACLE_ADDRESS, JOB_ID, {
+  const receipt = await ethUsdAPIConsumer.requestPrice(ORACLE_ADDRESS, JOB_ID, {
     from: owner,
   });
   console.log("Transaction receipt", receipt);
@@ -248,7 +249,7 @@ module.exports = async function (callback) {
   let maxMinutes = 2;
   do {
     pastEvents = await getPastEvents(
-      priceAPIConsumer,
+      ethUsdAPIConsumer,
       "ChainlinkFulfilled",
       {id: requestId},
       blockNumber,
@@ -274,7 +275,7 @@ module.exports = async function (callback) {
 
   // NB: This event is risen at the same time than `ChainlinkFulfilled`.
   const eventRequestPriceFulfilled = await getPastEvents(
-    priceAPIConsumer,
+    ethUsdAPIConsumer,
     "RequestPriceFulfilled",
     {requestId: requestId},
     blockNumber,
