@@ -285,8 +285,25 @@ module.exports = async function (callback) {
   console.log("Event RequestPriceFulfilled", eventRequestPriceFulfilled[0]);
   console.log("");
 
-  const currentPrice = eventRequestPriceFulfilled[0].args.price;
-  console.log(`Current price ETH: $${bnToDecimalString(currentPrice, 8, 2)}`);
+  // Get current price from RequestPriceFulfilled event
+  const currentPriceEvent = eventRequestPriceFulfilled[0].args.price;
+  console.log(
+    `Current price ETH (from RequestPriceFulfilled event): $${bnToDecimalString(
+      currentPriceEvent,
+      8,
+      2
+    )}`
+  );
+
+  // Get current price from contract storage (via `currentPrice`)
+  const currentPrice = await ethUsdAPIConsumer.currentPrice({from: owner});
+  console.log(
+    `Current price ETH (from contract storage): $${bnToDecimalString(
+      currentPrice,
+      8,
+      2
+    )}`
+  );
 
   callback();
 };

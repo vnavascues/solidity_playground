@@ -43,7 +43,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  *   5. ETH Transaction
  *
  * Contract address:
- *  - Ropsten: 0x66e1d52805695DDaf8D7835F45cE196D7827b559
+ *  - Ropsten (current): 0xf1deffC43dB10A0fe83C1dC8BEdA10fD7Df732a3
+ *  - Ropstend (previous): 0x66e1d52805695DDaf8D7835F45cE196D7827b559
  */
 contract EthUsdAPIConsumer is ChainlinkClient, Ownable {
     // NB: Testnet cost is 1 LINK
