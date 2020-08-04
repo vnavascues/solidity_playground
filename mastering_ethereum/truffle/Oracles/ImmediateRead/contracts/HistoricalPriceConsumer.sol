@@ -8,9 +8,15 @@ import "@chainlink/contracts/src/v0.6/interfaces/AggregatorInterface.sol";
  * @author Victor Navascues.
  * @dev An example of an "immadiate-read" oracle but using Chainlink instead of
  * Provable (Oraclize).
- * This contract, copied from the Chainlink Price Feeds code examples, gets a
- * previous price of an asset.
- *  - https://docs.chain.link/docs/historical-price-data
+ * This contract code is based on:
+ *  - Official documentation: "Historical Price Data" code example.
+ *   - https://docs.chain.link/docs/historical-price-data
+ *  - Remix gist: `HistoricalPriceConsumer.sol`.
+ *
+ * This gets the previous price of an asset stored already on-chain. This value
+ * is the result of aggregating (e.g. average, median, etc.) on-chain different
+ * values requested via the oracle network (i.e. N nodes) to off-chain APIs
+ * (i.e. M data providers).
  *
  * Contract addresses
  *  - Ropsten: 0x83767e8dd507F1903f24af85Dd245216AF0B0846
