@@ -62,7 +62,7 @@ module.exports = {
         ),
       network_id: 3,
       gas: 5500000,
-      gasPrice: 100000000000,
+      gasPrice: 10000000000,
       timeoutBlocks: 4000,
       skipDryRun: true,
       websockets: true,

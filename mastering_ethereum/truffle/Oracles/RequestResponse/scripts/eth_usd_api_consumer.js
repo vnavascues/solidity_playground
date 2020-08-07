@@ -195,8 +195,8 @@ module.exports = async function (callback) {
 
   const denominator = new BN(10).pow(linkDecimals);
 
+  // NB: Due to requests cost LINK, owner & contract balances are displayed
   // Get Owner account LINK balance
-  // NB: Due to testnet requests cost 1 LINK, owner balance is displayed
   const ownerBalance = await linkToken.balanceOf(owner, {from: owner});
 
   console.log(
