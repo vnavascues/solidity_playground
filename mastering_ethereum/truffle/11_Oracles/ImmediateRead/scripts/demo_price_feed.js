@@ -1,13 +1,6 @@
 const PriceConsumer = artifacts.require("PriceConsumer");
 const HistoricalPriceConsumer = artifacts.require("HistoricalPriceConsumer");
 
-// Ropsten contract addresses
-// PriceConsumer
-// 0x3f9747eCBF5Db2d039e7861fC2aFC2E67dDd7ecF
-// HistoricalPriceConsumer
-// 0x83767e8dd507F1903f24af85Dd245216AF0B0846
-// ETH-USD price feed
-// https://feeds.chain.link/eth-usd
 module.exports = async function (callback) {
   async function getAccounts() {
     return web3.eth.getAccounts();

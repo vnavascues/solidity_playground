@@ -16,9 +16,6 @@ import "@chainlink/contracts/src/v0.6/interfaces/AggregatorInterface.sol";
  * is the result of aggregating (e.g. average, median, etc.) on-chain different
  * values requested via the oracle network (i.e. N nodes) to off-chain APIs
  * (i.e. M data providers).
- *
- * Contract addresses
- *  - Ropsten: 0x3f9747eCBF5Db2d039e7861fC2aFC2E67dDd7ecF
  */
 contract PriceConsumer {
     AggregatorInterface internal trustedPriceFeed;

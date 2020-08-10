@@ -20,7 +20,6 @@
  *   - The JSON ABI from the Truffle builds.
  *   - A JS module from the official SDK as a Node module.
  *
- *
  * Just for learning purposes below some of the approaches followed before using
  * `@truffle/contract` along the official `LinkTokenInterface.js` provided by
  * Chainlink in `@chainlink/contracts`:
@@ -99,10 +98,6 @@
  * Ropsten LINK faucet:
  *  - https://ropsten.chain.link/
  *
- * Ropsten EthUsdAPIConsumer contract addresses:
- *  - (current): 0xf1deffC43dB10A0fe83C1dC8BEdA10fD7Df732a3
- *  - (previous) 0x66e1d52805695DDaf8D7835F45cE196D7827b559
- *
  * Node details (from Chainlink Market):
  *  - https://market.link/jobs/d1178a2c-d090-4396-9b09-5f278cfaa155
  *
@@ -111,17 +106,6 @@
  *
  * Node Job Id:
  *  - d00773d991984ceda7902304b324c718
- *
- * Contract address
- *  - 0x66e1d52805695ddaf8d7835f45ce196d7827b559
- *
- * List of some request Id generated (readable via getPastEvents()):
- *  - 0x28d60e3f981c8d7a7dd1966a55a7323747058ad8db15b6d7802862de6307e5ab
- *  - 0xf4bc928473e63e7b40ce3997cc0ffc30164c942b97bc826eb1b67189167b9599
- *  - 0x0807bc59488185e4c6babd4cb3ce403e0f121673a89ea1ec27802001c09df2de
- *  - 0x4c1bac4093f4903e017641539bb147772e20cc560448881a0d7bcc29b8309655
- *  - 0x441a7cd46928bb3da7ae4f57ec484b5e96645019ae4fee254dc9ab5a9a19dc99
- *  - 0x2761662d57c76692771a39adff2dd4c89a848068bed228b658452fa6d1d54a48
  */
 require("module-alias/register");
 const {bnToDecimalString} = require("@utils/bignumbers.js");
