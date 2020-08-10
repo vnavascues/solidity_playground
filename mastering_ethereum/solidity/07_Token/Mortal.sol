@@ -10,22 +10,6 @@ import {Owned} from "./Owned.sol";
  * @dev Inherits from Owned and implements contract destruction.
  */
 contract Mortal is Owned {
-    // BEWARE: NatSpec comments are not available yet for events.
-    /**
-     * @notice This event is emitted when a withdrawal occurs.
-     * @dev The keyword `indexed` makes the value searchable and filterable.
-     * @param to the address that requests the withdrawal.
-     * @param amount the requested ether amount.
-     */
-    event Withdrawal(address indexed to, uint256 amount);
-    /**
-     * @notice This event is emitted when a diposit occurs.
-     * @dev The keyword `indexed` makes the value searchable and filterable.
-     * @param from the address that requests the deposit.
-     * @param amount the requested ether amount.
-     */
-    event Deposit(address indexed from, uint256 amount);
-
     /**
      * @dev In case `owner` was not payable, call `payable(owner)`.
      */

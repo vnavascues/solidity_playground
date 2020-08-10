@@ -1,3 +1,6 @@
+# Binaries (e.g. solc, solcjs)
+*.bin
+
 # Environment variables
 .env
 

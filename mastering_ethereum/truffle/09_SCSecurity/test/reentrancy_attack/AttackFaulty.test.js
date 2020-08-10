@@ -11,8 +11,9 @@
  * swap Jest "test()" by "it()".
  *
  * @group attackfaulty
- * @group contracts/attackfaulty
- * @group scsecurity/contracts/attackfaulty
+ * @group faulty
+ * @group reentrancy_attack/attackfaulty
+ * @group reentrancy_attack/faulty
  */
 const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
@@ -26,7 +27,7 @@ const {
   send,
   // time,
 } = require("@openzeppelin/test-helpers");
-const {transactionCost} = require("./helpers/transactionCost.js");
+const {transactionCost} = require("./../helpers/transactionCost.js");
 
 const AttackFaulty = contract.fromArtifact("AttackFaulty");
 const EtherStoreFaulty = contract.fromArtifact("EtherStoreFaulty");

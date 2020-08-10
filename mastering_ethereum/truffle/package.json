@@ -1,16 +1,14 @@
 {
-  "name": "solidity_playground",
+  "name": "truffle",
   "version": "1.0.0",
-  "description": "Learning how to make smart contracts in Solidity",
+  "description": "Mastering Ethereum Truffle projects",
   "dependencies": {
-    "eslint": "^7.6.0",
-    "prettier": "^2.0.5",
-    "prettier-plugin-solidity": "^1.0.0-alpha.54",
-    "solhint": "^3.0.0"
+    "truffle": "^5.1.39"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint": "prettier --list-different **/*.sol",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vnavascues/solidity_playground.git"

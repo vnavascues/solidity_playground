@@ -1,9 +1,9 @@
 {
-  "name": "oracles_immediate_read",
+  "name": "11_oracles_immediate_read",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mastering Ethereum - Chapter 11: Immediate-Read oracles",
   "author": "Victor Navascues",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "scripts": {
     "lint": "eslint ."
   },
@@ -19,6 +19,5 @@
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
     "solhint": "^3.0.0"
-  },
-  "devDependencies": {}
+  }
 }

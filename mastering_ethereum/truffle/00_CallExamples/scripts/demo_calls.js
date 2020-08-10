@@ -16,7 +16,7 @@ module.exports = async function (callback) {
 
   const instance = await Caller.deployed();
 
-  const res = await instance.makeCalls(Called.address);
+  const recipe = await instance.makeCalls(Called.address);
 
   console.log("Call to 'makeCalls' logs...");
 

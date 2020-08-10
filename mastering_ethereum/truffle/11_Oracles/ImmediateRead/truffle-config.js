@@ -11,15 +11,15 @@ module.exports = {
     },
     local_ropsten: {
       provider: () =>
-        new HDWalletProvider(process.env.MNEMONIC_2, "http://localhost:8545"),
+        new HDWalletProvider(process.env.MNEMONIC_1, "http://localhost:8545"),
       network_id: 3,
       skipDryRun: true,
     },
     kovan: {
       provider: () =>
         new HDWalletProvider(
-          process.env.MNEMONIC_2,
-          process.env.KOVAN_HTTPS_ENDPOINT
+          process.env.MNEMONIC_1,
+          process.env.KOVAN_WSS_ENDPOINT
         ),
       network_id: 42,
       skipDryRun: true,
@@ -27,8 +27,8 @@ module.exports = {
     rinkeby: {
       provider: () =>
         new HDWalletProvider(
-          process.env.MNEMONIC_2,
-          process.env.RINKEBY_HTTPS_ENDPOINT
+          process.env.MNEMONIC_1,
+          process.env.RINKEBY_WSS_ENDPOINT
         ),
       network_id: 4,
       confirmations: 2,
@@ -38,7 +38,7 @@ module.exports = {
     ropsten: {
       provider: () =>
         new HDWalletProvider(
-          process.env.MNEMONIC_2,
+          process.env.MNEMONIC_1,
           process.env.ROPSTEN_WSS_ENDPOINT
         ),
       network_id: 3,

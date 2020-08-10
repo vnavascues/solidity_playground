@@ -23,7 +23,7 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 const variableExpansion = require("dotenv-expand");
 variableExpansion(require("dotenv").config());
 const provider = new HDWalletProvider(
-  process.env.MNEMONIC_2,
+  process.env.MNEMONIC_1,
   process.env.ROPSTEN_WSS_ENDPOINT
 );
 const {

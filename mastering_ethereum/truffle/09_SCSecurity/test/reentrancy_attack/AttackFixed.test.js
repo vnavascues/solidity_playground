@@ -11,8 +11,9 @@
  * swap Jest "test()" by "it()".
  *
  * @group attackfixed
- * @group contracts/attackfixed
- * @group scsecurity/contracts/attackfixed
+ * @group fixed
+ * @group reentrancy_attack/attackfixed
+ * @group reentrancy_attack/fixed
  */
 const {accounts, contract, web3} = require("@openzeppelin/test-environment");
 // NB: All helpers are imported for learning purposes.
@@ -26,7 +27,7 @@ const {
   send,
   // time,
 } = require("@openzeppelin/test-helpers");
-const {transactionCost} = require("./helpers/transactionCost.js");
+const {transactionCost} = require("./../helpers/transactionCost.js");
 
 const AttackFixed = contract.fromArtifact("AttackFixed");
 const EtherStoreFixed = contract.fromArtifact("EtherStoreFixed");

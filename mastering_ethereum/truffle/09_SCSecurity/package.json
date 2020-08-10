@@ -1,9 +1,9 @@
 {
-  "name": "scsecurity",
+  "name": "09_sc_security",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mastering Ethereum - Chapter 9: Smart Contracts Security",
   "author": "Victor Navascues",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "scripts": {
     "lint": "eslint .",
     "test": "jest --forceExit --detectOpenHandles",
