@@ -29,7 +29,8 @@ import {EtherStoreFixed as UntrustedEtherStore} from "./EtherStoreFixed.sol";
  *    - Use events to monitor contract activity.
  *    - Lock pragmas to specific compiler version. NA.
  *
- *  - Added the optional message in `require()`.
+ *  - Added the optional message in `require()`. Ideally it should be no longer
+ *  than 32 bytes (not applied).
  */
 contract AttackFixed is Ownable {
     UntrustedEtherStore public untrustedEtherStore;

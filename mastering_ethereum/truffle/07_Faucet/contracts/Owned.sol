@@ -2,13 +2,12 @@
 pragma solidity ^0.6.0;
 
 /**
- * @title Mastering Ethereum Chapter 6, Faucet contract v5.
+ * @title Mastering Ethereum Chapter 7, Owner contract.
  * @author Victor Navascues.
- * @notice Faucet4 applying contract inheritance, error handling, events, and
- * NatSpec documentation.
+ * @notice Enables basic access control capabilities.
  * @dev Base contract that sets the contract ownership in the state.
  */
-contract Owned5 {
+contract Owned {
     /**
      * @dev The keyword `payable` is optional (it can be casted later on via
      * `payable(owner)`, and `internal` for inheritance.
@@ -30,7 +29,7 @@ contract Owned5 {
     modifier onlyOwner {
         require(
             msg.sender == owner,
-            "Owned5: Only the contract owner can call this function."
+            "Owned: Only the contract owner can call this function."
         );
         _;
     }

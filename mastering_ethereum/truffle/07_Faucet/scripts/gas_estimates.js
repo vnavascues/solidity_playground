@@ -1,12 +1,12 @@
-const Faucet5 = artifacts.require("Faucet5");
+const Faucet = artifacts.require("Faucet");
 
-Faucet5.web3.eth.getGasPrice(async function (error, result) {
+Faucet.web3.eth.getGasPrice(async function (error, result) {
   const gasPrice = Number(result);
 
   console.log(`Gas Price is ${gasPrice} wei`); // "10000000000000"
 
   // Get the contract instance
-  const instance = await Faucet5.deployed();
+  const instance = await Faucet.deployed();
 
   await instance.send(web3.utils.toWei("1", "ether"));
 

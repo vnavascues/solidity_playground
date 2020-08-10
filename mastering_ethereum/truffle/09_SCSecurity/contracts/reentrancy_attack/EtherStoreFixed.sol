@@ -32,8 +32,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  *    length). NA.
  *    - Use events to monitor contract activity.
  *    - Lock pragmas to specific compiler version. NA.
+ *    - Messages no longer than 32 bytes.
  *
- *  - Added the optional message in `require()`.
+ *  - Added the optional message in `require()`. Ideally it should be no longer
+ *  than 32 bytes (not applied).
  *
  *  NB: Ideally it could inherit from openzeppelin token `TokenTimelock`
  *  contract, but it this beyond the exercise of fixing the reentrancy attack.
@@ -53,7 +55,7 @@ contract EtherStoreFixed is Ownable {
      * executing the function. It protects the function from reentrant calls.
      */
     modifier noReentrancyMutex {
-        require(!locked, "Reentrant call.");
+        require(!locked, "EtherStoreFixed: Reentrant call.");
         locked = true;
         _;
         locked = false;

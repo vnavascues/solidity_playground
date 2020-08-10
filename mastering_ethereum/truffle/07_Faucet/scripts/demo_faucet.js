@@ -1,7 +1,7 @@
-const Faucet5 = artifacts.require("Faucet5");
+const Faucet = artifacts.require("Faucet");
 
 module.exports = async function (callback) {
-  const instance = await Faucet5.deployed();
+  const instance = await Faucet.deployed();
 
   console.log("Sending 1 ether...");
 

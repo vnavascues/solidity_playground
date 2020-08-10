@@ -1,16 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
-import {Owned5} from "./Owned5.sol";
+import {Owned} from "./Owned.sol";
 
 /**
- * @title Mastering Ethereum Chapter 6, Faucet contract v5.
+ * @title Mastering Ethereum Chapter 7, Mortal contract.
  * @author Victor Navascues.
- * @notice Faucet4 applying contract inheritance, error handling, events, and
- * NatSpec documentation.
- * @dev Inherits from Owned5 and implements contract destruction.
+ * @notice Enables contract deletion/self destruction.
+ * @dev Inherits from Owned and implements contract destruction.
  */
-contract Mortal5 is Owned5 {
+contract Mortal is Owned {
     // BEWARE: NatSpec comments are not available yet for events.
     /**
      * @notice This event is emitted when a withdrawal occurs.
