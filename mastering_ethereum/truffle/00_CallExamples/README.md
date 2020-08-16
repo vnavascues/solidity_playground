@@ -6,7 +6,7 @@ This project does not belong to the book.
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.
+**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
 
 - [Called.sol](build/contracts/Called.sol): a contract with the function `calledFunction()` that emits the event `CallEvent`.
 
@@ -32,7 +32,7 @@ $ npm install
 
 [Ganache](https://www.trufflesuite.com/ganache)
 
-This project has two environments set up in `truffle-config.js`: **development** and **dev** (preferred). The former is already provided by **Truffle**, whilst the latter requires a local instance of **Ganache**. Check its documentation for installing it and load this project.
+This project has two environments set up in `truffle-config.js`: **development** and **dev** (preferred). The former is already provided by **Truffle**, whilst the latter requires a local instance of **Ganache**. Check its documentation to see how install it and load this project.
 
 ## Usage
 

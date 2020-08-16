@@ -11,6 +11,9 @@
 logs
 *.log
 
+# Manticore
+mcore_*/
+
 # Mythx
 bin/
 

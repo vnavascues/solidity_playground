@@ -10,23 +10,7 @@ Learning how to make smart contracts in Solidity.
 
 ## Requirements
 
-### 1. Solidity Compiler
-
-[Solc](https://solidity.readthedocs.io/en/v0.6.10/installing-solidity.html)
-
-[Solc-select](https://github.com/crytic/solc-select)
-
-[Solc-js](https://github.com/ethereum/solc-js#readme)
-
-This repository requires a global installation of **solc v0.6.10**. Below some options:
-
-- Specific binary release: a specific package, or on demand via **solc-select**.
-
-- Updatable binary release: the snap package.
-
-- NPM package : **solc-js**.
-
-### 2. NPM Dependencies
+### NPM Dependencies
 
 ```shell
 $ npm install
@@ -45,27 +29,39 @@ For automatically run the node version specified in the `.nvmrc` file, an option
 2. Paste at the top `nvm use`.
 3. Either re-activate the environment or source it using the terminal.
 
-### 2. Python, Virtualenvwrapper & Poetry for MythX & Slither tools
+### 2. Python, Virtualenvwrapper & Poetry for Manticore, MythX & Slither tools
 
 [Virtualenvwrapper](https://virtualenvwrapper.readthedoc)
 
 [Poetry](https://python-poetry.org/)
 
+[Solc-select](https://github.com/crytic/solc-select)
+
+[Manticore](https://github.com/trailofbits/manticore)
+
 [MythX CLI](https://github.com/dmuhs/mythx-cli)
 
 [Slither](https://github.com/crytic/slither)
 
-The usage of **MythX CLI** and/or **Slither** is optional. Check their documentation for learning how to use them.
+**Manticore**, **MythX CLI** and **Slither** are different analysis tools of smart contracts and binaries, and its usage is optional (check their documentation to see how they work). They require **Python 3.6 or greater** and recommend a **Python virtual environment**.
 
 An example of how to set up their environment:
 
-1. Install **virtualenvwrapper**.
+1. Install **Python 3.6 or greater**.
 
-2. Create a Python 3 virtual environment (i.e. `solidity_playground`) and activate it.
+2. Install **virtualenvwrapper**, create a virtual environment (i.e. `solidity_playground`) and activate it.
 
 3. Install the requirements (in `poetry.toml`) via **Poetry** (or comment out the not desired one).
 
-**MythX CLI** requires as well:
+**Manticore** requires a global installation of **solc** (Solidity compiler) that matches the one specified in the contracts. An option can be:
+
+1. Install **solc-select**.
+
+2. Open the virtual environment `.postactivate` script and add the command `solc use <solc_version>` (e.g. `solc use 0.6.12`).
+
+3. Either re-activate the environment or source it using the terminal.
+
+**MythX CLI** requires:
 
 1. Sign up in the platform and copy the API key.
 

@@ -4,7 +4,7 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.
+**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
 
 [Chainlink Developers Documentation](https://docs.chain.link/docs)
 

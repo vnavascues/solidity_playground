@@ -16,8 +16,16 @@ $ npm install
 
 ## Optional Requirements
 
-### Solc-select
+### Solidity Compiler
+
+[Solc](https://solidity.readthedocs.io/en/v0.6.12/installing-solidity.html)
+
+[Solc-js](https://github.com/ethereum/solc-js#readme)
 
 [Solc-select](https://github.com/crytic/solc-select)
 
-Just in case a snap version of **solc** has been installed in the system and the latest version does not match the contracts one, this project installs **solc-js v0.6.10**. An alternative could be use **solc-select** for using a desired version of **solc**. Please, check its official documentation.
+This project installs **solc-js v0.6.12** (NPM package installed locally). Below some alternatives with global installations:
+
+- Specific binary release: a **specific package**, or on demand via **solc-select**.
+
+- Updatable binary release: the **snap package**.

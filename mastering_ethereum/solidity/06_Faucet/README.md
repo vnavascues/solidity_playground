@@ -4,7 +4,7 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.
+**BEWARE**: the contracts have been implemented using Solidity v0.6.12
 
 - [Faucet.sol](Faucet.sol): the first example of `Faucet.sol`, a Solidity contract implementing a faucet.
 
@@ -18,11 +18,11 @@
 
 ## Usage
 
-More information about how to use **solc** and **solc-js** in their official documentation:
-
-- [Solc](https://solidity.readthedocs.io/en/v0.6.10/using-the-compiler.html)
+- [Solc](https://solidity.readthedocs.io/en/v0.6.12/using-the-compiler.html)
 
 - [Solc-js](https://github.com/ethereum/solc-js#readme)
+
+Check **solc** and **solc-js** documentation to see how to use them:
 
 ### 1. Get solc-js version
 

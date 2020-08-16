@@ -22,9 +22,23 @@ $ npm install
 
 ## Optional Requirements
 
-### Truffle v5
+### 1. Truffle v5
 
 [Truffle](https://www.trufflesuite.com/docs/truffle/overview)
 
-This repository will install **Truffle** locally (dependency in `package.json`), but it can be installed globally (check the official documentation).
+This repository will install **Truffle** locally (dependency in `package.json`), but it can be installed globally (check the documentation).
 Each truffle project in this repository contains its own **Truffle** configuration file (`truffle-config.js`).
+
+### 2. Solidity Compiler
+
+[Solc](https://solidity.readthedocs.io/en/v0.6.12/installing-solidity.html)
+
+[Solc-js](https://github.com/ethereum/solc-js#readme)
+
+[Solc-select](https://github.com/crytic/solc-select)
+
+**Truffle** projects with a specific compiler version in their configuration file use **solc-js** (NPM package installed locally) under the hood for installing the compiler. All the projects listed above use this system with **solc-js v0.6.12**. Below some alternatives with global installations:
+
+- Specific binary release: a **specific package**, or on demand via **solc-select**.
+
+- Updatable binary release: the **snap package**.

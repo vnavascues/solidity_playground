@@ -8,3 +8,4 @@ authors = ["Victor Navascues"]
 mythx-cli = "^0.6"
 python = "^3.8"
 slither-analyzer = "^0.6"
+manticore = "^0.3.4"
