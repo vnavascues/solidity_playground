@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: CC-BY-NC-SA-4.0
+pragma solidity 0.6.12;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import {EtherStoreFixed as UntrustedEtherStore} from "./EtherStoreFixed.sol";
@@ -27,7 +27,7 @@ import {EtherStoreFixed as UntrustedEtherStore} from "./EtherStoreFixed.sol";
  *    - Improved `fallback()` (e.g. simple, log an event, and check data
  *    length). NA.
  *    - Use events to monitor contract activity.
- *    - Lock pragmas to specific compiler version. NA.
+ *    - Lock pragmas to specific compiler version.
  *
  *  - Added the optional message in `require()`. Ideally it should be no longer
  *  than 32 bytes (not applied).

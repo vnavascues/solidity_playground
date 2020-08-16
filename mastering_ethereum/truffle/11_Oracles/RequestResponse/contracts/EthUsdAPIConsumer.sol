@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: CC-BY-NC-SA-4.0
+pragma solidity 0.6.12;
 
 import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -41,10 +41,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  *     - "times": "100000000"
  *   4. ETH Uint256
  *   5. ETH Transaction
- *
- * Contract address:
- *  - Ropsten (current): 0xf1deffC43dB10A0fe83C1dC8BEdA10fD7Df732a3
- *  - Ropstend (previous): 0x66e1d52805695DDaf8D7835F45cE196D7827b559
  */
 contract EthUsdAPIConsumer is ChainlinkClient, Ownable {
     // NB: Testnet cost is 1 LINK

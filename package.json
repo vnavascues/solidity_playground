@@ -1,24 +1,22 @@
 {
   "name": "solidity_playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learning how to make smart contracts in Solidity",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.1.0",
+    "eslint": "^7.6.0",
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
-    "solhint": "^3.0.0",
-    "truffle": "^5.1.35"
+    "solhint": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "lint": "prettier --list-different **/*.sol",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vnavascues/solidity_playground.git"
   },
   "author": "Victor Navascues",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "bugs": {
     "url": "https://github.com/vnavascues/solidity_playground/issues"
   },

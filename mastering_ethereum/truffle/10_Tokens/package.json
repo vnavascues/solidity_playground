@@ -1,9 +1,9 @@
 {
-  "name": "tokens",
+  "name": "10_tokens",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mastering Ethereum - Chapter 10: Tokens",
   "author": "Victor Navascues",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "scripts": {
     "lint": "eslint .",
     "prepush": "npm run lint && npm test",
@@ -28,6 +28,5 @@
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
     "solhint": "^3.0.0"
-  },
-  "devDependencies": {}
+  }
 }

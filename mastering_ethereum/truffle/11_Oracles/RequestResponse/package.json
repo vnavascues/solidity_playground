@@ -1,16 +1,17 @@
 {
-  "name": "oracles_request_response",
+  "name": "11_oracles_request_response",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mastering Ethereum - Chapter 11: Request-Response oracles",
   "author": "Victor Navascues",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "scripts": {
     "lint": "eslint ."
   },
   "lint": "prettier --list-different **/*.sol",
   "dependencies": {
     "@chainlink/contracts": "0.0.8",
-    "@truffle/hdwallet-provider": "^1.0.39",
+    "@openzeppelin/contracts": "^3.1.0",
+    "@truffle/hdwallet-provider": "^1.0.42",
     "bignumber": "^1.1.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
@@ -22,7 +23,6 @@
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
     "solhint": "^3.0.0"
   },
-  "devDependencies": {},
   "_moduleAliases": {
     "@utils": "utils"
   }

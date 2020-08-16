@@ -9,7 +9,7 @@
  *     - https://github.com/trufflesuite/truffle/tree/master/packages/contract
  *
  * Some differences are:
- *   - Contract methods that return a number (e.g. uint356) return a String via
+ *   - Contract methods that return a number (e.g. uint256) return a String via
  * `web3.eth.Contract()` but BN via `@truffle/contract`.
  *   - Different contract method calls syntax.
  *
@@ -115,7 +115,7 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 const variableExpansion = require("dotenv-expand");
 variableExpansion(require("dotenv").config());
 const provider = new HDWalletProvider(
-  process.env.MNEMONIC_2,
+  process.env.MNEMONIC_1,
   process.env.ROPSTEN_WSS_ENDPOINT
 );
 const {

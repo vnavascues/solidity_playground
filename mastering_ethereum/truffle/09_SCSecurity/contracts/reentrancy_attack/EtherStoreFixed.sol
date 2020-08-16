@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: CC-BY-NC-SA-4.0
+pragma solidity 0.6.12;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -15,7 +15,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  *
  *  - It implements the mutex logic follwing the Solidity official
  *  documentation example (via modifier, below):
- *    - https://solidity.readthedocs.io/en/v0.6.0/contracts.html?highlight=constructor#function-modifiers
+ *    - https://solidity.readthedocs.io/en/v0.6.12/contracts.html?highlight=constructor#function-modifiers
  *
  *  - It implements some Consensys' best practices (link below):
  *    - https://consensys.github.io/smart-contract-best-practices/recommendations
@@ -31,7 +31,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  *    - Improved `fallback()` (e.g. simple, log an event, and check data
  *    length). NA.
  *    - Use events to monitor contract activity.
- *    - Lock pragmas to specific compiler version. NA.
+ *    - Lock pragmas to specific compiler version.
  *    - Messages no longer than 32 bytes.
  *
  *  - Added the optional message in `require()`. Ideally it should be no longer

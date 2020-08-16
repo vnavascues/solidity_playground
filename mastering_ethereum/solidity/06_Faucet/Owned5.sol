@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: CC-BY-NC-SA-4.0
+pragma solidity 0.6.12;
 
 /**
  * @title Mastering Ethereum Chapter 6, Faucet contract v5.

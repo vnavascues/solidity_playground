@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: CC-BY-NC-SA-4.0
 /*
 Why:
   - Constructor keyword (remember it only runs once, during contract creation).
@@ -13,7 +13,7 @@ What:
   - Modifier onlyOwner for DIY. Modifiers are commonly used for acces control.
 
 */
-pragma solidity ^0.6.0;
+pragma solidity 0.6.12;
 
 contract Faucet4 {
     address payable private owner;

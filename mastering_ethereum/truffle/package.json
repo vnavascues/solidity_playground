@@ -1,0 +1,22 @@
+{
+  "name": "truffle",
+  "version": "1.0.0",
+  "description": "Mastering Ethereum Truffle projects",
+  "dependencies": {
+    "truffle": "^5.1.39"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint": "prettier --list-different **/*.sol",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vnavascues/solidity_playground.git"
+  },
+  "author": "Victor Navascues",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/vnavascues/solidity_playground/issues"
+  },
+  "homepage": "https://github.com/vnavascues/solidity_playground#readme"
+}

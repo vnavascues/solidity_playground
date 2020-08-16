@@ -1,3 +1,6 @@
+# Binaries (e.g. solc, solcjs)
+*.bin
+
 # Environment variables
 .env
 
@@ -7,6 +10,9 @@
 # Logs
 logs
 *.log
+
+# Manticore
+mcore_*/
 
 # Mythx
 bin/

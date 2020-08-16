@@ -1,0 +1,14 @@
+{
+  "name": "solidity",
+  "version": "1.0.0",
+  "description": "Mastering Ethereum Solidity contracts",
+  "dependencies": {
+    "solc": "^0.6.12",
+    "solhint": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Navascues",
+  "license": "CC-BY-SA-4.0"
+}
