@@ -8,9 +8,9 @@
 
 [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)
 
-- [METFaucet.sol](build/contracts/METFaucet.sol): the book's `METFaucet.sol` contract but with two withdraw functions: one using `<METoken>.transfer()` and the other one using `<METoken>.transferFrom()`.
+- [METFaucet.sol](contracts/METFaucet.sol): the book's `METFaucet.sol` contract but with two withdraw functions: one using `<METoken>.transfer()` and the other one using `<METoken>.transferFrom()`.
 
-- [METoken.sol](build/contracts/METoken.sol): the last version of `METoken.sol` but inheriting from the **OpenZeppelin** `ERC20.sol` token contract instead of the `StandardToken.sol` contract (deprecated).
+- [METoken.sol](contracts/METoken.sol): the last version of `METoken.sol` but inheriting from the **OpenZeppelin** `ERC20.sol` token contract instead of the `StandardToken.sol` contract (deprecated).
 
 ### Scripts
 

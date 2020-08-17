@@ -8,13 +8,13 @@
 
 The following contracts are the same than the ones in the [07_Token](./../solidity/07_Token/README.md) folder but within a **Truffle** project:
 
-- [Faucet.sol](build/contracts/Faucet.sol)
+- [Faucet.sol](contracts/Faucet.sol)
 
-- [Mortal.sol](build/contracts/Mortal.sol)
+- [Mortal.sol](contracts/Mortal.sol)
 
-- [Owned.sol](build/contracts/Owned.sol)
+- [Owned.sol](contracts/Owned.sol)
 
-- [Token.sol](build/contracts/Token.sol)
+- [Token.sol](contracts/Token.sol)
 
 ### Scripts
 

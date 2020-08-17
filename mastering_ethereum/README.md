@@ -1,7 +1,11 @@
 # Mastering Ethereum
 
+## Introduction
+
+Code examples from [Mastering Ethereum by Andreas M. Antonopoulos, Gavin Wood](https://github.com/ethereumbook/ethereumbook).
+
 ## Contents
 
-- [Solidity](solidity/README.md): **Solidity** smart contracts from the firsts chapters (e.g. `Faucet.sol`, `Token.sol`, etc.).
+- [Solidity](solidity/README.md): **Solidity** smart contracts.
 
-- [Truffle](truffle/README.md): **Truffle** projects of the more advanced chapters (e.g. `Faucet`, `METoken_METFaucet`, `Oracles`, etc.).
+- [Truffle](truffle/README.md): **Truffle** projects.

@@ -1,18 +1,16 @@
 # Mastering Ethereum - Truffle - 00_CallExamples
 
-This project does not belong to the book.
-
 ## Contents
 
 ### Contracts
 
 **BEWARE**: the contracts have been implemented using Solidity v0.6.12.
 
-- [Called.sol](build/contracts/Called.sol): a contract with the function `calledFunction()` that emits the event `CallEvent`.
+- [Called.sol](contracts/Called.sol): a contract with the function `calledFunction()` that emits the event `CallEvent`.
 
-- [CalledLibrary.sol](build/contracts/CalledLibrary.sol): a library contract with the function `calledFunction()` that emits the event `CallEvent`.
+- [CalledLibrary.sol](contracts/CalledLibrary.sol): a library contract with the function `calledFunction()` that emits the event `CallEvent`.
 
-- [Caller.sol](build/contracts/Caller.sol): a contract that does calls in different ways `CalledLibrary.sol::calledFunction` and `CalledLibrary.sol::calledFunction` (i.e. straight call, `call()` and `delegatecall()`).
+- [Caller.sol](contracts/Caller.sol): a contract that does calls in different ways `CalledLibrary.sol::calledFunction` and `CalledLibrary.sol::calledFunction` (i.e. straight call, `call()` and `delegatecall()`).
 
 ### Scripts
 
