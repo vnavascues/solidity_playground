@@ -14,13 +14,13 @@
 
 The "fixed" version of the contracts instead of implementing their own version of "ownable" (an access control) use the **OpenZeppelin** `Ownable.sol` contract.
 
-- [AttackFaulty.sol](build/contracts/reentrancy_attack/AttackFaulty.sol): a contract that exploits the reentrancy vulnerability of `EtherStoreFaulty.sol`.
+- [AttackFaulty.sol](contracts/reentrancy_attack/AttackFaulty.sol): a contract that exploits the reentrancy vulnerability of `EtherStoreFaulty.sol`.
 
-- [EtherStoreFaulty.sol](build/contracts/reentrancy_attack/EtherStoreFixed.sol): a contract with a reentrancy vulnerability in `withdrawFunds()`.
+- [EtherStoreFaulty.sol](contracts/reentrancy_attack/EtherStoreFixed.sol): a contract with a reentrancy vulnerability in `withdrawFunds()`.
 
-- [AttackFixed.sol](build/contracts/reentrancy_attack/AttackFixed.sol): a better implementation of `AttackFaulty.sol` introducing some of the best practices on smart contracts implementation (e.g. **Consensys**' best practices).
+- [AttackFixed.sol](contracts/reentrancy_attack/AttackFixed.sol): a better implementation of `AttackFaulty.sol` introducing some of the best practices on smart contracts implementation (e.g. **Consensys**' best practices).
 
-- [EtherStoreFixed.sol](build/contracts/reentrancy_attack/EtherStoreFixed.sol): the `EtherStoreFaulty.sol` contract with the preventative techniques applied along with best practices.
+- [EtherStoreFixed.sol](contracts/reentrancy_attack/EtherStoreFixed.sol): the `EtherStoreFaulty.sol` contract with the preventative techniques applied along with best practices.
 
 ### Scripts
 

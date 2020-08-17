@@ -1,10 +1,6 @@
 # Mastering Ethereum - Truffle - 11_Oracles - ImmediateRead
 
-## Contents
-
-### Contracts
-
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+## Introduction
 
 [Chainlink Developers Documentation](https://docs.chain.link/docs)
 
@@ -32,9 +28,15 @@ For using the **Chainlink Price Feeds** a contract requires:
 
 This project uses **Ropsten ETH/USD Price Feed** contract. Check [2_PriceConsumer.js](migrations/2_PriceConsumer.js) and [3_HistoricalPriceConsumer.js](migrations/3_HistoricalPriceConsumer.js) migrations.
 
-- [HistoricalPriceConsumer.sol](build/contracts/HistoricalPriceConsumer.sol): a contract that retrieves the historical price of the pair ETH/USD (data already stored on-chain).
+## Contents
 
-- [PriceConsumer.sol](build/contracts/PriceConsumer.sol): a contract that retrieves the current price of the pair ETH/USD (data already stored on-chain).
+### Contracts
+
+**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+
+- [HistoricalPriceConsumer.sol](contracts/HistoricalPriceConsumer.sol): a contract that retrieves the historical price of the pair ETH/USD (data already stored on-chain).
+
+- [PriceConsumer.sol](contracts/PriceConsumer.sol): a contract that retrieves the current price of the pair ETH/USD (data already stored on-chain).
 
 ### Scripts
 

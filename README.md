@@ -2,11 +2,13 @@
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
+## Introduction
+
 Learning how to make smart contracts in Solidity.
 
 ## Contents
 
-- [Mastering Ethereum](mastering_ethereum/README.md): Code from [Mastering Ethereum by Andreas M. Antonopoulos, Gavin Wood](https://github.com/ethereumbook/ethereumbook)
+- [Mastering Ethereum](mastering_ethereum/README.md): Code examples from [Mastering Ethereum by Andreas M. Antonopoulos, Gavin Wood](https://github.com/ethereumbook/ethereumbook).
 
 ## Requirements
 

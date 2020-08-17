@@ -1,10 +1,6 @@
 # Mastering Ethereum - Truffle - 11_Oracles - RequestResponse
 
-## Contents
-
-### Contracts
-
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+## Introduction
 
 [Chainlink Developers Documentation](https://docs.chain.link/docs)
 
@@ -38,9 +34,15 @@ For requesting any API a contract must be a **Chainlinked** contract and require
 
 This project uses **Ropsten** oracles. Check **Chainlink Market - Ropsten** for finding oracles and jobs in this network.
 
-- [APIRequester.sol](build/contracts/APIRequester.sol): a contract that requests numeric datum to any API using the most basic built-in adapters: `HttpGet` and `HttpPost`. This contract is just a proof of concept and does not follow the best practices: it is oracle/job/API agnostic (but focused on requesting numeric datum), and almost all task parameters must be passed on the function call.
+## Contents
 
-- [EthUsdAPIConsumer.sol](build/contracts/EthUsdAPIConsumer.sol): a contract that requests the the current price of the pair ETH/USD from the **CryptoCompare API** (off-chain data) through an oracle. This contract is very API oriented, by having almost all the adapter task parameters hard-coded (except the oracle address and the job ID).
+### Contracts
+
+**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+
+- [APIRequester.sol](contracts/APIRequester.sol): a contract that requests numeric datum to any API using the most basic built-in adapters: `HttpGet` and `HttpPost`. This contract is just a proof of concept and does not follow the best practices: it is oracle/job/API agnostic (but focused on requesting numeric datum), and almost all task parameters must be passed on the function call.
+
+- [EthUsdAPIConsumer.sol](contracts/EthUsdAPIConsumer.sol): a contract that requests the the current price of the pair ETH/USD from the **CryptoCompare API** (off-chain data) through an oracle. This contract is very API oriented, by having almost all the adapter task parameters hard-coded (except the oracle address and the job ID).
 
 ### Scripts
 
