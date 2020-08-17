@@ -4,7 +4,7 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
 - [Faucet.sol](Faucet.sol): the [Faucet5.sol](./../06_Faucet/Faucet.sol) contract.
 
@@ -12,7 +12,7 @@
 
 - [Owned.sol](Owned.sol): the [Owned5.sol](./../06_Faucet/Owned5.sol) contract.
 
-- [Token.sol](Token.sol): the `Token.sol` contract version which constructor requires the Faucet contract's address to be passed as an argument.
+- [Token.sol](Token.sol): the version of the `Token.sol` contract which constructor requires the Faucet contract address.
 
 ## Usage
 

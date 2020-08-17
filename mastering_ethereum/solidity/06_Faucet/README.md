@@ -4,17 +4,17 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
-- [Faucet.sol](Faucet.sol): the first example of `Faucet.sol`, a Solidity contract implementing a faucet.
+- [Faucet.sol](Faucet.sol): first example of `Faucet.sol`, a Solidity contract implementing a faucet.
 
-- [Faucet4.sol](Faucet4.sol): the fourth version of `Faucet.sol`. It implements an access modifier and a destroy function.
+- [Faucet4.sol](Faucet4.sol): fourth version of `Faucet.sol`. It implements an access modifier and a destroy function.
 
-- [Faucet5.sol](Faucet5.sol): a custom version of the `Faucet8.sol` book's contract, but applying contract inheritance,and NatSpec documentation.
+- [Faucet5.sol](Faucet5.sol): custom version of `Faucet8.sol`, but applying contract inheritance, and **NatSpec** documentation.
 
-- [Mortal5.sol](Mortal5.sol): the `Mortal.sol` contract from the book's `Faucet8.sol`.
+- [Mortal5.sol](Mortal5.sol): `Mortal.sol` from the `Faucet8.sol` contract.
 
-- [Owned5.sol](Owned5.sol): the `Owned.sol` contract from the book's `Faucet8.sol`.
+- [Owned5.sol](Owned5.sol): `Owned.sol` from the `Faucet8.sol` contract.
 
 ## Usage
 

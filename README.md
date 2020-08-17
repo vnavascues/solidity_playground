@@ -8,7 +8,7 @@ Learning how to make smart contracts in Solidity.
 
 ## Contents
 
-- [Mastering Ethereum](mastering_ethereum/README.md): Code examples from [Mastering Ethereum by Andreas M. Antonopoulos, Gavin Wood](https://github.com/ethereumbook/ethereumbook).
+- [Mastering Ethereum](mastering_ethereum/README.md): code examples from [Mastering Ethereum by Andreas M. Antonopoulos, Gavin Wood](https://github.com/ethereumbook/ethereumbook).
 
 ## Requirements
 
@@ -24,8 +24,7 @@ $ npm install
 
 [Node Version Manager](https://github.com/nvm-sh/nvm/blob/master/README.md)
 
-The node version number is in the `.nvmrc` file.
-For automatically run the node version specified in the `.nvmrc` file, an option is:
+The node version is in the `.nvmrc` file, and an example for automatically use this version of node is:
 
 1. Open the virtual environment `.postactivate` script.
 2. Paste at the top `nvm use`.

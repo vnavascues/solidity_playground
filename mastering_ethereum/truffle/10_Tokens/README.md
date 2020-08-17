@@ -4,11 +4,11 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
 [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)
 
-- [METFaucet.sol](contracts/METFaucet.sol): the book's `METFaucet.sol` contract but with two withdraw functions: one using `<METoken>.transfer()` and the other one using `<METoken>.transferFrom()`.
+- [METFaucet.sol](contracts/METFaucet.sol): the `METFaucet.sol` contract but with two withdraw functions: one using `transfer()` and the other using `transferFrom()`.
 
 - [METoken.sol](contracts/METoken.sol): the last version of `METoken.sol` but inheriting from the **OpenZeppelin** `ERC20.sol` token contract instead of the `StandardToken.sol` contract (deprecated).
 

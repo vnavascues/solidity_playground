@@ -4,13 +4,13 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
 - [Called.sol](contracts/Called.sol): a contract with the function `calledFunction()` that emits the event `CallEvent`.
 
 - [CalledLibrary.sol](contracts/CalledLibrary.sol): a library contract with the function `calledFunction()` that emits the event `CallEvent`.
 
-- [Caller.sol](contracts/Caller.sol): a contract that does calls in different ways `CalledLibrary.sol::calledFunction` and `CalledLibrary.sol::calledFunction` (i.e. straight call, `call()` and `delegatecall()`).
+- [Caller.sol](contracts/Caller.sol): a contract that calls `CalledLibrary.sol::calledFunction` and `CalledLibrary.sol::calledFunction` in different ways (i.e. straight call, `call()` and `delegatecall()`).
 
 ### Scripts
 

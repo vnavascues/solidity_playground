@@ -18,7 +18,7 @@ This project implements in **Truffle** (instead of in **Remix IDE**) the followi
 
 - [Create a Chainlinked Project](https://docs.chain.link/docs/create-a-chainlinked-project) (already in **Truffle** via a **Truffle Box**)
 
-For requesting any API a contract must be a **Chainlinked** contract and requires:
+For requesting any API a contract must be a **Chainlinked** contract which requires:
 
 - Inherit from the `ChainlinkClient.sol` **Chainlink contracts** contract.
 
@@ -38,7 +38,7 @@ This project uses **Ropsten** oracles. Check **Chainlink Market - Ropsten** for 
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
 - [APIRequester.sol](contracts/APIRequester.sol): a contract that requests numeric datum to any API using the most basic built-in adapters: `HttpGet` and `HttpPost`. This contract is just a proof of concept and does not follow the best practices: it is oracle/job/API agnostic (but focused on requesting numeric datum), and almost all task parameters must be passed on the function call.
 
@@ -66,7 +66,7 @@ $ npm install
 
 [Truffle HDWalletProvider](https://github.com/trufflesuite/truffle/tree/develop/packages/hdwallet-provider)
 
-Due to the **Chainlink Price Feeds** contracts are in the Ethereum mainnet and some of the testnets, this project contracts must be deployed and used there (in this case **Ropsten**). An alternative to setting up locally your own Ethereum node connected to the **Ropsten** network is to use **Infura**.
+Due to the **Chainlink Price Feeds** contracts are in the Ethereum mainnet and some of the testnets, this project contracts must be deployed and used there (in this case **Ropsten**). An alternative to set up locally your own Ethereum node connected to the **Ropsten** network is to use **Infura**.
 
 1. Sign up in **Infura** (consider enable 2FA via hardware device).
 

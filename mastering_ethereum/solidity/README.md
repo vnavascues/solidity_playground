@@ -2,9 +2,9 @@
 
 ## Contents
 
-- [06_Faucet](06_Faucet/README.md): a set of some of the different versions of the `Faucet.sol` contract, that is presented in the chapter 2 and continuously evolves until the chapter 6.
+- [06_Faucet](06_Faucet/README.md): different versions of the `Faucet.sol` contract, which is presented in Chapter 2 and evolves until Chapter 6.
 
-- [07_Token](07_Token/README.md): the chapter 7 set of contracts before using **Truffle** for their deployment.
+- [07_Token](07_Token/README.md): Chapter 7 Faucet contracts before using **Truffle**.
 
 ## Requirements
 

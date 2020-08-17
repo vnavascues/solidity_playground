@@ -4,7 +4,7 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
 #### Reentrancy Attack
 
@@ -12,7 +12,7 @@
 
 [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)
 
-The "fixed" version of the contracts instead of implementing their own version of "ownable" (an access control) use the **OpenZeppelin** `Ownable.sol` contract.
+The "fixed" version of the contracts use the **OpenZeppelin** `Ownable.sol` contract instead of implementing their own access control modifier.
 
 - [AttackFaulty.sol](contracts/reentrancy_attack/AttackFaulty.sol): a contract that exploits the reentrancy vulnerability of `EtherStoreFaulty.sol`.
 

@@ -4,9 +4,7 @@
 
 ### Contracts
 
-**BEWARE**: the contracts have been implemented using Solidity v0.6.12.
-
-The following contracts are the same than the ones in the [07_Token](./../solidity/07_Token/README.md) folder but within a **Truffle** project:
+**BEWARE**: contracts implemented with Solidity v0.6.12.
 
 - [Faucet.sol](contracts/Faucet.sol)
 
@@ -18,7 +16,7 @@ The following contracts are the same than the ones in the [07_Token](./../solidi
 
 ### Scripts
 
-- [demo_faucet.js](scripts/demo_faucet.js): shows contracts and EOA balances, before and after funding the `Faucet`, and after withdrawing the as well.
+- [demo_faucet.js](scripts/demo_faucet.js): shows contracts and EOA balances, before and after funding the `Faucet`, and after withdrawing it.
 
 - [gas_estimates.js](scripts/gas_estimates.js): estimates the gas cost of `Faucet.sol::withdrawal()`.
 
