@@ -37,7 +37,7 @@ const BN = web3.utils.BN;
 
 // Oracle
 const tenCentsLINK = "100000000000000000";
-const oneLINK = "1000000000000000000";
+// const oneLINK = "1000000000000000000";
 const ORACLE_ADDRESS = "0x83da1beeb89ffaf56d0b7c50afb0a66fb4df8cb1";
 
 // Jobs

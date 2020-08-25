@@ -5,7 +5,10 @@
   "author": "Victor Navascues",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "lint": "eslint .",
+    "demo:reentrancy:faulty": "npx truffle exec scripts/reentrancy_attack/demo_etherstorefaulty.js --network dev",
+    "demo:reentrancy:fixed": "npx truffle exec scripts/reentrancy_attack/demo_etherstorefixed.js --network dev",
+    "lint": "npx eslint .",
+    "lint:scripts": "npx eslint scripts/",
     "test": "jest --forceExit --detectOpenHandles",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"

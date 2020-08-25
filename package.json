@@ -4,6 +4,7 @@
   "description": "Learning how to make smart contracts in Solidity",
   "dependencies": {
     "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
     "solhint": "^3.0.0"

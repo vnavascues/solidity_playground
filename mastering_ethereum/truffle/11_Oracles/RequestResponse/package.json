@@ -5,13 +5,16 @@
   "author": "Victor Navascues",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "lint": "eslint ."
+    "demo:eth_usd": "npx truffle exec scripts/demo_eth_usd_api_consumer.js --network ropsten",
+    "demo:watermelon": "npx truffle exec scripts/demo_api_requester.js --network ropsten",
+    "lint": "npx eslint .",
+    "lint:scripts": "npx eslint scripts/"
   },
   "lint": "prettier --list-different **/*.sol",
   "dependencies": {
     "@chainlink/contracts": "0.0.8",
     "@openzeppelin/contracts": "^3.1.0",
-    "@truffle/hdwallet-provider": "^1.0.42",
+    "@truffle/hdwallet-provider": "^1.0.39",
     "bignumber": "^1.1.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",

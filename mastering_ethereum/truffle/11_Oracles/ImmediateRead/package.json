@@ -5,7 +5,9 @@
   "author": "Victor Navascues",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "npx eslint .",
+    "lint:scripts": "npx eslint scripts/",
+    "demo:eth_usd": "npx truffle exec scripts/demo_price_feed.js --network ropsten"
   },
   "lint": "prettier --list-different **/*.sol",
   "dependencies": {

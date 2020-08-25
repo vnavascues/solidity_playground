@@ -5,11 +5,9 @@
   "author": "Victor Navascues",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "lint": "eslint .",
-    "prepush": "npm run lint && npm test",
-    "test": "jest --forceExit --detectOpenHandles",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors"
+    "demo:metoken": "npx truffle exec scripts/demo_metoken.js --network dev",
+    "lint": "npx eslint .",
+    "lint:scripts": "npx eslint scripts/"
   },
   "lint": "prettier --list-different **/*.sol",
   "dependencies": {
