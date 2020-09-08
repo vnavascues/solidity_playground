@@ -42,10 +42,7 @@ contract HistoricalPriceConsumer {
      */
     function getPreviousPrice(uint256 _back) public view returns (int256) {
         uint256 latest = trustedPriceFeed.latestRound();
-        require(
-            _back <= latest,
-            "HistoricalPriceConsumer: Not enough history."
-        );
+        require(_back <= latest, "Not enough history");
         return trustedPriceFeed.getAnswer(latest - _back);
     }
 
@@ -60,10 +57,7 @@ contract HistoricalPriceConsumer {
         returns (uint256)
     {
         uint256 latest = trustedPriceFeed.latestRound();
-        require(
-            _back <= latest,
-            "HistoricalPriceConsumer: Not enough history."
-        );
+        require(_back <= latest, "Not enough history");
         return trustedPriceFeed.getTimestamp(latest - _back);
     }
 }

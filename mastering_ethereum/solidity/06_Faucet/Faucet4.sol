@@ -22,14 +22,17 @@ contract Faucet4 {
         owner = msg.sender;
     }
 
+    // solhint-disable-next-line no-empty-blocks
     receive() external payable {}
 
     modifier onlyOwner {
+        // solhint-disable-next-line reason-string
         require(msg.sender == owner);
         _;
     }
 
     function withdraw(uint256 withdrawAmount) public {
+        // solhint-disable-next-line reason-string
         require(withdrawAmount <= 0.1 ether);
         msg.sender.transfer(withdrawAmount);
     }

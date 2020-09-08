@@ -1,19 +1,16 @@
 module.exports = {
   env: {
-    browser: true,
-    es2020: true,
-    jest: true,
+    node: true,
   },
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+  globals: {
+    artifacts: true,
+    web3: true,
+  },
+  root: true,
   parserOptions: {
     ecmaVersion: 11,
     sourceType: "module",
   },
-  globals: {
-    artifacts: true,
-    module: true,
-    process: true,
-    web3: true,
-  },
   rules: {},
-  extends: ["eslint:recommended", "prettier"],
 };

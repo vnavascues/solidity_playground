@@ -1,17 +1,20 @@
-const Caller = artifacts.require("./Caller.sol");
+const Faucet = artifacts.require("Faucet");
 
-module.exports = async function (callback) {
-  Caller.web3.eth.getGasPrice(async function (error, result) {
-    const accounts = await web3.eth.getAccounts();
-    const account = accounts[0];
+module.exports = async function () {
+  Faucet.web3.eth.getGasPrice(async (error, result) => {
     const gasPrice = Number(result);
 
     console.log(`Gas Price is ${gasPrice} wei`); // "10000000000000"
 
     // Get the contract instance
-    const instance = await Caller.deployed();
+    const instance = await Faucet.deployed();
 
-    const gas_ = await instance.makeCalls.estimateGas(account);
+    // Fund contract for successfully calling withdraw later on
+    await instance.send(web3.utils.toWei("1", "ether"));
+
+    const gas_ = await instance.withdraw.estimateGas(
+      web3.utils.toWei("0.1", "ether")
+    );
 
     const gas = Number(gas_);
     const gasCostEstimation = gas * gasPrice;

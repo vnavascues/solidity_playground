@@ -5,10 +5,12 @@
   "author": "Victor Navascues",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "demo:reentrancy:faulty": "npx truffle exec scripts/reentrancy_attack/demo_etherstorefaulty.js --network dev",
-    "demo:reentrancy:fixed": "npx truffle exec scripts/reentrancy_attack/demo_etherstorefixed.js --network dev",
-    "lint": "npx eslint .",
-    "lint:scripts": "npx eslint scripts/",
+    "console": "npx truffle console --network development",
+    "demo:reentrancy:faulty": "npx truffle exec scripts/reentrancy_attack/demo_etherstorefaulty.js --network development",
+    "demo:reentrancy:fixed": "npx truffle exec scripts/reentrancy_attack/demo_etherstorefixed.js --network development",
+    "lint:sol": "solhint contracts/**/*.sol",
+    "lint:js": "eslint . --fix --ext .js",
+    "migrate": "npx truffle migrate --network development",
     "test": "jest --forceExit --detectOpenHandles",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
@@ -19,7 +21,7 @@
     "@openzeppelin/test-helpers": "^0.5.6",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
-    "husky": "^4.2.5",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "jest-runner-groups": "^2.0.1",
     "jest-runner-prettier": "^0.3.6",
@@ -28,6 +30,7 @@
     "power-assert": "^1.6.1",
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
-    "solhint": "^3.0.0"
+    "solhint": "^3.0.0",
+    "solhint-plugin-prettier": "0.0.5"
   }
 }

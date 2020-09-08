@@ -19,7 +19,7 @@ contract AttackFaulty {
     }
 
     function attackEtherStoreFaulty() external payable {
-        require(msg.value >= 1 ether, "AttackFaulty: Requires 1 ether.");
+        require(msg.value >= 1 ether, "Requires 1 ether");
         etherStoreFaulty.depositFunds{value: 1 ether}();
         etherStoreFaulty.withdrawFunds(1 ether);
     }

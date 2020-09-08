@@ -62,27 +62,29 @@ $ npm install
 
 [Ganache](https://www.trufflesuite.com/ganache)
 
-This project has two environments set up in `truffle-config.js`: **development** and **dev** (preferred). The former is already provided by **Truffle**, whilst the latter requires a local instance of **Ganache**. Check its documentation to see how install it and load this project.
+This project has a **Ganache** environment (**development**) set up in `truffle-config.js`. Check its documentation to see how install it and load this project.
 
 ## Usage
 
 ### 1. Compile and Migrate contracts
 
 ```shell
-$ truffle migrate --network dev
+$ npm run migrate
 ```
 
 ### 2. Run scripts
 
 ```shell
-$ truffle exec scripts/reentrancy_attack/demo_etherstorefaulty.js
+$ npm run demo:reentrancy:faulty
 ```
 
 ```shell
-$ truffle exec scripts/reentrancy_attack/demo_etherstorefixed.js
+$ npm run demo:reentrancy:fixed
 ```
 
 ### 3. Run tests
+
+**BEWARE**: any contract change will require to compile them again (`$ npx truffle compile`) before running the tests.
 
 Run all the tests (optionally `$ npx jest`):
 

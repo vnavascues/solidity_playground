@@ -2,6 +2,7 @@
 pragma solidity 0.6.12;
 
 contract Faucet {
+    // solhint-disable-next-line no-empty-blocks
     receive() external payable {}
 
     function withdraw(uint256 withdrawAmount) public {

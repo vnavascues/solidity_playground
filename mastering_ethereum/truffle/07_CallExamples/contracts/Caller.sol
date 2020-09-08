@@ -27,11 +27,15 @@ contract Caller {
 
         // NB: Solidity >= 0.5.0, capturing `call` and `delegatecall` returns
         // in variables
+        // solhint-disable-next-line avoid-low-level-calls
         (success, response) = address(_called).call(functionSig);
+        // solhint-disable-next-line reason-string
         require(success);
         emit LogLowLevelCalls(msg.sender, success, response);
 
+        // solhint-disable-next-line avoid-low-level-calls
         (success, response) = address(_called).delegatecall(functionSig);
+        // solhint-disable-next-line reason-string
         require(success);
         emit LogLowLevelCalls(msg.sender, success, response);
     }

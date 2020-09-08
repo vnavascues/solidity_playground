@@ -5,12 +5,13 @@
   "author": "Victor Navascues",
   "license": "CC-BY-SA-4.0",
   "scripts": {
+    "console": "npx truffle console --network ropsten",
     "demo:eth_usd": "npx truffle exec scripts/demo_eth_usd_api_consumer.js --network ropsten",
     "demo:watermelon": "npx truffle exec scripts/demo_api_requester.js --network ropsten",
-    "lint": "npx eslint .",
-    "lint:scripts": "npx eslint scripts/"
+    "lint:sol": "solhint contracts/**/*.sol",
+    "lint:js": "eslint . --fix --ext .js",
+    "migrate": "npx truffle migrate --network ropsten"
   },
-  "lint": "prettier --list-different **/*.sol",
   "dependencies": {
     "@chainlink/contracts": "0.0.8",
     "@openzeppelin/contracts": "^3.1.0",
@@ -20,11 +21,12 @@
     "dotenv-expand": "^5.1.0",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
-    "husky": "^4.2.5",
+    "eslint-plugin-prettier": "^3.1.4",
     "module-alias": "^2.2.2",
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
-    "solhint": "^3.0.0"
+    "solhint": "^3.0.0",
+    "solhint-plugin-prettier": "0.0.5"
   },
   "_moduleAliases": {
     "@utils": "utils"

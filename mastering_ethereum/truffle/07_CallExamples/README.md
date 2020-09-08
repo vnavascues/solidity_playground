@@ -1,4 +1,4 @@
-# Mastering Ethereum - Truffle - 00_CallExamples
+# Mastering Ethereum - Truffle - 07_CallExamples
 
 ## Contents
 
@@ -30,22 +30,22 @@ $ npm install
 
 [Ganache](https://www.trufflesuite.com/ganache)
 
-This project has two environments set up in `truffle-config.js`: **development** and **dev** (preferred). The former is already provided by **Truffle**, whilst the latter requires a local instance of **Ganache**. Check its documentation to see how install it and load this project.
+This project has a **Ganache** environment (**development**) set up in `truffle-config.js`. Check its documentation to see how install it and load this project.
 
 ## Usage
 
 ### 1. Compile and Migrate contracts
 
 ```shell
-$ truffle migrate --network dev
+$ npm run migrate
 ```
 
 ### 2. Run scripts
 
 ```shell
-$ truffle exec scripts/demo_calls.js
+$ npm run demo:calls
 ```
 
 ```shell
-$ truffle exec scripts/gas_estimates.js
+$ npm run demo:gas_estimates
 ```

