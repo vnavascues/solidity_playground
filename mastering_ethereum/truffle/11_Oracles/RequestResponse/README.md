@@ -112,17 +112,17 @@ USDA_KEY = <USDA API Key>
 ### 1. Compile and Migrate contracts
 
 ```shell
-$ truffle migrate --network ropsten
+$ npm run migrate
 ```
 
 ### 2. Run scripts
 
 ```shell
-$ truffle exec scripts/demo_eth_usd_api_consumer.js --network ropsten
+$ npm run demo:eth_usd
 ```
 
 ```shell
-$ truffle exec scripts/demo_api_requester_.js --network ropsten
+$ npm run demo:watermelon
 ```
 
 ## Tests

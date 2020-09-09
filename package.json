@@ -5,12 +5,15 @@
   "dependencies": {
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
     "prettier-plugin-solidity": "^1.0.0-alpha.54",
-    "solhint": "^3.0.0"
+    "solhint": "^3.0.0",
+    "solhint-plugin-prettier": "0.0.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:sol": "solhint **/*.sol",
+    "lint:js": "eslint . --fix --ext .js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,6 @@
   "bugs": {
     "url": "https://github.com/vnavascues/solidity_playground/issues"
   },
-  "homepage": "https://github.com/vnavascues/solidity_playground#readme"
+  "homepage": "https://github.com/vnavascues/solidity_playground#readme",
+  "devDependencies": {}
 }

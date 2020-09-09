@@ -84,7 +84,7 @@ describe("AttackFixed", () => {
     describe("the sender is the owner", () => {
       describe("the message value is less than 1 ether", () => {
         test("the transaction is reverted", async () => {
-          const message = "AttackFixed: Requires 1 ether.";
+          const message = "Requires 1 ether";
           await expectRevert(
             attackFixed.attackUntrustedEtherStore({
               from: attacker,

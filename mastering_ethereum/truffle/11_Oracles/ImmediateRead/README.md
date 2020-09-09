@@ -88,11 +88,11 @@ ROPSTEN_WSS_ENDPOINT="wss://ropsten.infura.io/ws/v3/${PROJECT_ID}"
 ### 1. Compile and Migrate contracts
 
 ```shell
-$ truffle migrate --network ropsten
+$ npm run migrate
 ```
 
 ### 2. Run scripts
 
 ```shell
-$ truffle exec scripts/demo_price_feed.js --network ropsten
+$ npm run demo:eth_usd
 ```

@@ -5,6 +5,7 @@ contract Called {
     event CallEvent(address sender, address origin, address from);
 
     function calledFunction() public {
+        // solhint-disable-next-line avoid-tx-origin
         emit CallEvent(msg.sender, tx.origin, address(this));
     }
 }

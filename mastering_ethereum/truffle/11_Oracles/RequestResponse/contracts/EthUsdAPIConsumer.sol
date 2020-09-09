@@ -80,6 +80,7 @@ contract EthUsdAPIConsumer is ChainlinkClient, Ownable {
         req.add("path", "USD");
         req.addInt("times", 100000000); // NB: It could be 100
         sendChainlinkRequestTo(_oracle, req, PAYMENT);
+        // solhint-disable-next-line not-rely-on-time
         expiration = block.timestamp + 5 minutes;
     }
 

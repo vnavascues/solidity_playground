@@ -27,10 +27,8 @@ contract Owned {
      * contract creator one.
      */
     modifier onlyOwner {
-        require(
-            msg.sender == owner,
-            "Owned: Only the contract owner can call this function."
-        );
+        // solhint-disable-next-line reason-string
+        require(msg.sender == owner, "Only owner");
         _;
     }
 }

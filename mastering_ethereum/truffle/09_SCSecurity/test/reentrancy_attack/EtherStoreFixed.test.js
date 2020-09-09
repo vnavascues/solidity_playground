@@ -90,7 +90,7 @@ describe("EtherStoreFixed", () => {
   describe("withdrawFunds()", () => {
     describe("the sender does not have sufficient balance", () => {
       test("the transaction is reverted", async () => {
-        const message = "EtherStoreFixed: Insufficient balance.";
+        const message = "Insufficient balance";
         const withdraw = ether("1");
         await expectRevert(
           etherStoreFixed.withdrawFunds(withdraw, {from: account1}),
@@ -110,7 +110,7 @@ describe("EtherStoreFixed", () => {
 
       describe("the withdrawal limit is exceeded", () => {
         test("the transaction is reverted", async () => {
-          const message = "EtherStoreFixed: Withdrawal limit exceeded.";
+          const message = "Withdrawal limit exceeded";
           const withdraw = ether("1.5");
           await expectRevert(
             etherStoreFixed.withdrawFunds(withdraw, {from: account1}),
@@ -122,8 +122,7 @@ describe("EtherStoreFixed", () => {
       describe("the withdrawal limit is not exceeded", () => {
         describe("a week has not passed since last withdrawal", () => {
           test("the transaction is reverted", async () => {
-            const message =
-              "EtherStoreFixed: A week has not passed since last withdrawal.";
+            const message = "A week must pass btw withdraws";
             const withdraw = ether("1");
             await etherStoreFixed.withdrawFunds(withdraw, {from: account1});
             await expectRevert(

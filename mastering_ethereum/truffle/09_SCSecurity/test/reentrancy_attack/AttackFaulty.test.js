@@ -61,7 +61,7 @@ describe.only("AttackFaulty", () => {
   describe("attackEtherStoreFaulty()", () => {
     describe("the message value is less than 1 ether", () => {
       test("the transaction is reverted", async () => {
-        const message = "AttackFaulty: Requires 1 ether.";
+        const message = "Requires 1 ether";
         await expectRevert(
           attackFaulty.attackEtherStoreFaulty({
             from: attacker,

@@ -40,11 +40,11 @@ contract Faucet is Mortal {
      * @param withdrawAmount the requested ether amount.
      */
     function withdraw(uint256 withdrawAmount) public {
-        require(withdrawAmount <= 0.1 ether);
+        require(withdrawAmount <= 0.1 ether, "Withdraw less than 0.1 Ether");
         // NB: This check increases gas consumption slightly.
         require(
             myAddress.balance >= withdrawAmount,
-            "Faucet: Insufficient balance in faucet for withdrawal request."
+            "Insufficient balance in faucet"
         );
         msg.sender.transfer(withdrawAmount);
         emit Withdrawal(msg.sender, withdrawAmount);

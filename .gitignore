@@ -1,3 +1,6 @@
+# App
+dist
+
 # Binaries (e.g. solc, solcjs)
 *.bin
 
@@ -25,3 +28,6 @@ coverage/
 
 # Truffle
 build/
+
+# Typescript
+.ts

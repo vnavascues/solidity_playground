@@ -1,5 +1,5 @@
 const assert = require("power-assert");
-const { BN } = require("@openzeppelin/test-helpers/src/setup");
+const {BN} = require("@openzeppelin/test-helpers/src/setup");
 
 function transactionCost(gasPrice, gasUsed) {
   const validTypes = ["string", "number"];

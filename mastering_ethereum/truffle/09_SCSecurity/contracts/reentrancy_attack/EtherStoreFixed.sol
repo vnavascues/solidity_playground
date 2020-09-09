@@ -55,7 +55,7 @@ contract EtherStoreFixed is Ownable {
      * executing the function. It protects the function from reentrant calls.
      */
     modifier noReentrancyMutex {
-        require(!locked, "EtherStoreFixed: Reentrant call.");
+        require(!locked, "Reentrant call");
         locked = true;
         _;
         locked = false;
@@ -81,25 +81,28 @@ contract EtherStoreFixed is Ownable {
     function withdrawFunds(uint256 _weiToWithdraw) public noReentrancyMutex {
         require(
             balances[msg.sender] >= _weiToWithdraw,
-            "EtherStoreFixed: Insufficient balance."
+            "Insufficient balance"
         );
         require(
             _weiToWithdraw <= withdrawalLimit,
-            "EtherStoreFixed: Withdrawal limit exceeded."
+            "Withdrawal limit exceeded"
         );
         require(
-            now >= lastWithdrawTime[msg.sender] + 1 weeks,
-            "EtherStoreFixed: A week has not passed since last withdrawal."
+            // solhint-disable-next-line not-rely-on-time
+            block.timestamp >= lastWithdrawTime[msg.sender] + 1 weeks,
+            "A week must pass btw withdraws"
         );
 
         balances[msg.sender] -= _weiToWithdraw;
-        lastWithdrawTime[msg.sender] = now;
+        // solhint-disable-next-line not-rely-on-time
+        lastWithdrawTime[msg.sender] = block.timestamp;
 
         // NB: Don't use `transfer()` or `send()`. Pay attention to reentrancy.
         // msg.sender.transfer(_weiToWithdraw);
+        // solhint-disable-next-line avoid-low-level-calls
         (bool success, ) = msg.sender.call{value: _weiToWithdraw}("");
 
-        require(success, "EtherStoreFixed: Failed transaction.");
+        require(success, "Failed transaction");
         emit LogWithdrawalProcessed(msg.sender, _weiToWithdraw);
     }
 
